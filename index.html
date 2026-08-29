@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
@@ -40,14 +40,14 @@
         margin: 0;
         background: var(--surface);
         color: var(--ink);
-        font-family:
-          'Pretendard',
-          -apple-system,
-          BlinkMacSystemFont,
-          'Malgun Gothic',
-          sans-serif;
+        font-family: 'Pretendard', -apple-system, BlinkMacSystemFont,
+          'Malgun Gothic', sans-serif;
         -webkit-font-smoothing: antialiased;
         line-height: 1.6;
+        /* Korean text wraps at word (어절) boundaries, not mid-syllable-block —
+       without this a word like "엔지니어" can break as "엔지니" / "어". */
+        word-break: keep-all;
+        overflow-wrap: break-word;
       }
       img {
         max-width: 100%;
@@ -247,14 +247,18 @@
       }
 
       /* ---------- highlights ---------- */
+      /* flex layout (not an absolutely-positioned dot) so a wrapped second line
+     lines up under the first line's text, never under the bullet mark */
       .highlight-list {
         list-style: none;
         margin: 0;
         padding: 0;
       }
       .highlight-list li {
-        position: relative;
-        padding: 12px 0 12px 22px;
+        display: flex;
+        align-items: flex-start;
+        gap: 11px;
+        padding: 12px 0;
         border-bottom: 1px solid var(--rule);
         font-size: 0.95rem;
         line-height: 1.65;
@@ -267,9 +271,8 @@
       }
       .highlight-list li::before {
         content: '';
-        position: absolute;
-        left: 2px;
-        top: 22px;
+        flex: 0 0 auto;
+        margin-top: 0.72em;
         width: 5px;
         height: 5px;
         border-radius: 50%;
@@ -322,16 +325,17 @@
         padding: 0;
       }
       ul.bullets li {
-        position: relative;
-        padding: 5px 0 5px 18px;
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 5px 0;
         font-size: 0.92rem;
         line-height: 1.6;
       }
       ul.bullets li::before {
         content: '';
-        position: absolute;
-        left: 2px;
-        top: 14px;
+        flex: 0 0 auto;
+        margin-top: 0.68em;
         width: 5px;
         height: 5px;
         border-radius: 50%;
@@ -605,21 +609,29 @@
         </p>
         <ul class="highlight-list">
           <li>
-            uCMP · 반복문마다 SQL을 개별 호출하던 로직을
-            <b>사전 일괄 조회 + 캐싱</b>으로 리팩토링, 리포트 속도
-            <b>약 30% 개선</b> · 메트릭 누락 장애 재발 0건
+            <span
+              >uCMP · 반복문마다 SQL을 개별 호출하던 로직을
+              <b>사전 일괄 조회 + 캐싱</b>으로 리팩토링, 리포트 속도
+              <b>약 30% 개선</b> · 메트릭 누락 장애 재발 0건</span
+            >
           </li>
           <li>
-            UNO-Proxy · Envoy 기반 Proxy를 <b>Master-Agent 구조</b>로 직접 설계,
-            검증된 설정만 배포 · <b>저작권 등록 완료</b>
+            <span
+              >UNO-Proxy · Envoy 기반 Proxy를 <b>Master-Agent 구조</b>로 직접
+              설계, 검증된 설정만 배포 · <b>저작권 등록 완료</b></span
+            >
           </li>
           <li>
-            API Gateway · 반복 인스턴스 생성 로직을 <b>정적 객체로 전환</b>해
-            응답 시간 <b>500ms → 300ms(약 40% 단축)</b>
+            <span
+              >API Gateway · 반복 인스턴스 생성 로직을 <b>정적 객체로 전환</b>해
+              응답 시간 <b>500ms → 300ms(약 40% 단축)</b></span
+            >
           </li>
           <li>
-            DAR · 4개 클라우드 플랫폼에 <b>Master-Agent 분산 구조</b> 구축, 하루
-            <b>약 3,000건</b> 파일 자동 검사
+            <span
+              >DAR · 4개 클라우드 플랫폼에 <b>Master-Agent 분산 구조</b> 구축,
+              하루 <b>약 3,000건</b> 파일 자동 검사</span
+            >
           </li>
         </ul>
       </div>
@@ -654,18 +666,26 @@
           <div class="field-label">What did I do<span class="dot">.</span></div>
           <ul class="bullets">
             <li>
-              반복문 진입 전 데이터를 일괄 조회해 Map에 캐싱, 반복문 안에서는
-              메모리 조회만 수행하도록 리팩토링
+              <span
+                >반복문 진입 전 데이터를 일괄 조회해 Map에 캐싱, 반복문 안에서는
+                메모리 조회만 수행하도록 리팩토링</span
+              >
             </li>
             <li>
-              기존 로직과 병행 운영, AI 결과 비교 검증 후 전환 (롤백 리스크
-              최소화)
+              <span
+                >기존 로직과 병행 운영, AI 결과 비교 검증 후 전환 (롤백 리스크
+                최소화)</span
+              >
             </li>
             <li>
-              OCI API의 간헐적 메트릭 누락도 함께 발견, 재조회 방어 로직 추가 →
-              장애 <b>재발 0건</b>
+              <span
+                >OCI API의 간헐적 메트릭 누락도 함께 발견, 재조회 방어 로직 추가
+                → 장애 <b>재발 0건</b></span
+              >
             </li>
-            <li>리포트 속도 <b>약 30% 개선</b></li>
+            <li>
+              <span>리포트 속도 <b>약 30% 개선</b></span>
+            </li>
           </ul>
           <div class="close-note">
             <b>원칙</b>AI가 제시하는 원인·해법은 가설로 취급, 직접 DB 쿼리와
@@ -690,11 +710,17 @@
           </p>
           <div class="field-label">What did I do<span class="dot">.</span></div>
           <ul class="bullets">
-            <li>학습 범위 밖 질문은 OpenAI API 직접 연동 폴백 로직 구현</li>
-            <li>사용자별 대화 이력 기반 개인화 구현</li>
             <li>
-              임베딩 저장부터 검색, 다중 모델 선택, 예외 처리, 개인화까지
-              <b>AI 서비스 데이터 흐름 전체를 처음부터 설계</b>
+              <span
+                >학습 범위 밖 질문은 OpenAI API 직접 연동 폴백 로직 구현</span
+              >
+            </li>
+            <li><span>사용자별 대화 이력 기반 개인화 구현</span></li>
+            <li>
+              <span
+                >임베딩 저장부터 검색, 다중 모델 선택, 예외 처리, 개인화까지
+                <b>AI 서비스 데이터 흐름 전체를 처음부터 설계</b></span
+              >
             </li>
           </ul>
           <div class="close-note">
@@ -749,12 +775,16 @@
               </div>
               <ul class="bullets">
                 <li>
-                  OCI API 데이터 결측 방어 로직을 구축해 핵심 자산 데이터의
-                  <b>일관성·무결성 확보</b>
+                  <span
+                    >OCI API 데이터 결측 방어 로직을 구축해 핵심 자산 데이터의
+                    <b>일관성·무결성 확보</b></span
+                  >
                 </li>
                 <li>
-                  멀티클라우드 확장 대비 클라우드별 서비스 분리 전략으로
-                  <b>GCP 버전 신규 개발</b> (고객사 1곳, 12개 인스턴스)
+                  <span
+                    >멀티클라우드 확장 대비 클라우드별 서비스 분리 전략으로
+                    <b>GCP 버전 신규 개발</b> (고객사 1곳, 12개 인스턴스)</span
+                  >
                 </li>
               </ul>
               <div class="field-label">
@@ -790,12 +820,24 @@
               </div>
               <ul class="bullets">
                 <li>
-                  <b>Master-Agent 구조</b>로 설계: Master가 xDS·Envoy 설정을
-                  사전 생성, 검증 후 Agent(Spring)에 배포
+                  <span
+                    ><b>Master-Agent 구조</b>로 설계: Master가 xDS·Envoy 설정을
+                    사전 생성, 검증 후 Agent(Spring)에 배포</span
+                  >
                 </li>
-                <li>운영 서버에는 <b>검증된 파일만 배포</b>해 안정성 확보</li>
-                <li>Envoy hot restart로 SSL 인증서 무중단 자동 갱신 구현</li>
-                <li><b>컴퓨터프로그램저작물 저작권 등록 완료</b></li>
+                <li>
+                  <span
+                    >운영 서버에는 <b>검증된 파일만 배포</b>해 안정성 확보</span
+                  >
+                </li>
+                <li>
+                  <span
+                    >Envoy hot restart로 SSL 인증서 무중단 자동 갱신 구현</span
+                  >
+                </li>
+                <li>
+                  <span><b>컴퓨터프로그램저작물 저작권 등록 완료</b></span>
+                </li>
               </ul>
               <div class="field-label">
                 Tech Stack<span class="dot">.</span>
@@ -829,12 +871,17 @@
               </div>
               <ul class="bullets">
                 <li>
-                  반복 인스턴스 생성 비효율 로직 발견, config 기반 정적 객체로
-                  전환 → 응답 시간 <b>약 500ms에서 300ms로 개선(약 40% 단축)</b>
+                  <span
+                    >반복 인스턴스 생성 비효율 로직 발견, config 기반 정적
+                    객체로 전환 → 응답 시간
+                    <b>약 500ms에서 300ms로 개선(약 40% 단축)</b></span
+                  >
                 </li>
                 <li>
-                  금융권 고객사 AI 연동 니즈에 맞춰 <b>SSE 중계 기능</b> 신규
-                  개발 (스트리밍 응답 중계, 예외 처리 포함)
+                  <span
+                    >금융권 고객사 AI 연동 니즈에 맞춰 <b>SSE 중계 기능</b> 신규
+                    개발 (스트리밍 응답 중계, 예외 처리 포함)</span
+                  >
                 </li>
               </ul>
               <div class="field-label">
@@ -867,8 +914,10 @@
               </div>
               <ul class="bullets">
                 <li>
-                  <b>하루 약 3,000건 파일 검사, 일평균 약 100건 마스킹</b>,
-                  이메일·Teams 관리자 알림
+                  <span
+                    ><b>하루 약 3,000건 파일 검사, 일평균 약 100건 마스킹</b>,
+                    이메일·Teams 관리자 알림</span
+                  >
                 </li>
               </ul>
               <div class="field-label">
