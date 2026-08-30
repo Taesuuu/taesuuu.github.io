@@ -626,8 +626,9 @@
           </li>
           <li>
             <span
-              >API Gateway · 반복 인스턴스 생성 로직을 <b>정적 객체로 전환</b>해
-              응답 시간 <b>500ms → 300ms(약 40% 단축)</b></span
+              >API Gateway · 반복 인스턴스 생성 로직을
+              <b>Singleton Bean으로 전환</b>해 응답 시간
+              <b>500ms → 300ms(약 40% 단축)</b></span
             >
           </li>
           <li>
@@ -741,7 +742,7 @@
         </h2>
         <p class="section-intro">
           Highlights에서 요약한 4개 핵심 프로젝트를 포함해, (주)터틀날리지에서
-          진행한 프로젝트를 진행 순서대로 자세히 다룹니다.
+          진행한 프로젝트를 자세히 다룹니다.
         </p>
 
         <div class="company-group">
@@ -758,7 +759,7 @@
               <h3 class="project-title">
                 UNO-Proxy · Envoy 기반 Proxy 운영 도구<span class="dot">.</span>
               </h3>
-              <p class="project-date">2026.04 – 현재 · 저작권 등록</p>
+              <p class="project-date">저작권 등록 · 2026.04 – 현재</p>
               <p class="project-hook">
                 운영 서버에 검증되지 않은 설정이 바로 반영되는 위험을 없애기
                 위해, Master가 미리 만들고 검증한 설정만 Agent에 배포하는 구조로
@@ -800,8 +801,9 @@
                 Tech Stack<span class="dot">.</span>
               </div>
               <div class="tech-tags">
-                <span>Envoy</span><span>Spring</span><span>Go</span
-                ><span>JMeter</span><span>TLS/SSL</span>
+                <span>Envoy</span><span>Spring</span><span>JPA</span
+                ><span>QueryDSL</span><span>Go</span><span>JMeter</span
+                ><span>TLS/SSL</span>
               </div>
             </article>
 
@@ -813,8 +815,8 @@
               </h3>
               <p class="project-date">2025.10 – 현재</p>
               <p class="project-hook">
-                매 요청마다 인스턴스를 새로 생성하던 비효율을, config 기반 정적
-                객체로 바꿔 응답 시간을 500ms에서 300ms로 줄였습니다.
+                매 요청마다 인스턴스를 새로 생성하던 비효율을, Singleton
+                Bean으로 등록해 응답 시간을 500ms에서 300ms로 줄였습니다.
               </p>
               <div class="field-label">
                 Description<span class="dot">.</span>
@@ -829,8 +831,8 @@
               <ul class="bullets">
                 <li>
                   <span
-                    >반복 인스턴스 생성 비효율 로직 발견, config 기반 정적
-                    객체로 전환 → 응답 시간
+                    >반복 인스턴스 생성 비효율 로직 발견, Spring Singleton
+                    Bean으로 등록 → 응답 시간
                     <b>약 500ms에서 300ms로 개선(약 40% 단축)</b></span
                   >
                 </li>
@@ -889,9 +891,10 @@
                 Tech Stack<span class="dot">.</span>
               </div>
               <div class="tech-tags">
-                <span>Spring</span><span>PostgreSQL</span
-                ><span>OCI Cloud API</span><span>Codex</span><span>GPT</span
-                ><span>Jenkins</span><span>Thymeleaf</span>
+                <span>Spring</span><span>JPA</span><span>QueryDSL</span
+                ><span>PostgreSQL</span><span>OCI Cloud API</span
+                ><span>Codex</span><span>GPT</span><span>Jenkins</span
+                ><span>Thymeleaf</span>
               </div>
             </article>
 
@@ -927,8 +930,9 @@
                 Tech Stack<span class="dot">.</span>
               </div>
               <div class="tech-tags">
-                <span>Spring</span><span>MariaDB</span><span>OCI</span
-                ><span>GCP</span><span>Azure</span><span>JWT</span>
+                <span>Spring</span><span>JPA</span><span>QueryDSL</span
+                ><span>MariaDB</span><span>OCI</span><span>GCP</span
+                ><span>Azure</span><span>JWT</span>
               </div>
             </article>
 
@@ -950,8 +954,9 @@
                 Tech Stack<span class="dot">.</span>
               </div>
               <div class="tech-tags">
-                <span>Java</span><span>Milvus</span><span>RAG</span
-                ><span>OpenAI API</span><span>GPT</span><span>Gemini</span>
+                <span>Java</span><span>JPA</span><span>QueryDSL</span
+                ><span>Milvus</span><span>RAG</span><span>OpenAI API</span
+                ><span>GPT</span><span>Gemini</span>
               </div>
             </article>
 
@@ -994,7 +999,8 @@
                 Tech Stack<span class="dot">.</span>
               </div>
               <div class="tech-tags">
-                <span>Spring</span><span>Disk2vhd</span><span>VirtualBox</span
+                <span>Spring</span><span>JPA</span><span>QueryDSL</span
+                ><span>Disk2vhd</span><span>VirtualBox</span
                 ><span>Syncthing</span>
               </div>
             </article>
@@ -1016,7 +1022,7 @@
               </div>
               <div class="tech-tags">
                 <span>Nginx</span><span>RTMP</span><span>Spring</span
-                ><span>MariaDB</span>
+                ><span>JPA</span><span>QueryDSL</span><span>MariaDB</span>
               </div>
             </article>
           </div>
