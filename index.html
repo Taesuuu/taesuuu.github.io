@@ -55,7 +55,6 @@
       a {
         color: inherit;
       }
-
       /* ---------- top gradient bar ---------- */
       .topbar {
         height: 5px;
@@ -66,7 +65,6 @@
           var(--cyan)
         );
       }
-
       /* ---------- nav ---------- */
       nav {
         position: sticky;
@@ -113,7 +111,6 @@
       .nav-toggle {
         display: none;
       }
-
       /* ---------- layout helpers ---------- */
       .wrap {
         max-width: var(--maxw);
@@ -126,7 +123,6 @@
       section + section {
         border-top: 1px solid var(--rule);
       }
-
       h2.section-title {
         font-size: 1.55rem;
         font-weight: 800;
@@ -143,7 +139,6 @@
         max-width: 62ch;
         font-style: italic;
       }
-
       /* ---------- hero ---------- */
       header.hero {
         border-bottom: 1px solid var(--rule);
@@ -188,7 +183,6 @@
       .contact-line a:hover {
         color: var(--accent);
       }
-
       /* ---------- stat row (org snapshot) ---------- */
       .snapshot {
         margin-top: 44px;
@@ -248,7 +242,6 @@
         opacity: 0.88;
         margin-top: 4px;
       }
-
       /* ---------- highlights ---------- */
       /* flex layout (not an absolutely-positioned dot) so a wrapped second line
      lines up under the first line's text, never under the bullet mark */
@@ -284,7 +277,6 @@
       .highlight-list b {
         font-weight: 700;
       }
-
       /* ---------- AI cases ---------- */
       .case-card {
         padding: 26px 0;
@@ -358,7 +350,6 @@
         font-weight: 700;
         margin-right: 6px;
       }
-
       /* ---------- company / project two-column groups ---------- */
       .company-group {
         display: grid;
@@ -368,6 +359,10 @@
         border-top: 1px solid var(--rule);
       }
       .company-group:first-of-type {
+        border-top: none;
+        padding-top: 0;
+      }
+      .company-group.no-divider {
         border-top: none;
         padding-top: 0;
       }
@@ -393,7 +388,6 @@
         font-size: 0.84rem;
         line-height: 1.55;
       }
-
       .project {
         padding-bottom: 34px;
       }
@@ -423,6 +417,32 @@
         margin: 0 0 16px;
         line-height: 1.6;
       }
+      /* ---------- inline diagrams ---------- */
+      .diagram {
+        margin: 18px 0 22px;
+        padding: 20px 20px 16px;
+        background: var(--surface-2);
+        border: 1px solid var(--rule);
+        border-radius: 10px;
+      }
+      .diagram svg {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+      .diagram-trigger {
+        font-size: 0.78rem;
+        color: var(--muted);
+        font-style: italic;
+        margin: -6px 0 14px;
+      }
+      .diagram-caption {
+        font-size: 0.8rem;
+        color: var(--muted);
+        text-align: center;
+        margin: 12px 0 0;
+        line-height: 1.6;
+      }
       .tech-tags {
         display: flex;
         flex-wrap: wrap;
@@ -438,7 +458,6 @@
         padding: 4px 9px;
         border-radius: 6px;
       }
-
       /* ---------- education / certs ---------- */
       .edu-list {
         list-style: none;
@@ -464,7 +483,6 @@
         color: var(--muted);
         font-size: 0.9rem;
       }
-
       /* ---------- footer / contact ---------- */
       footer {
         padding: 56px 0 72px;
@@ -494,7 +512,6 @@
         font-size: 0.78rem;
         color: var(--faint);
       }
-
       @media (max-width: 760px) {
         h1.headline {
           font-size: 1.9rem;
@@ -534,7 +551,6 @@
   </head>
   <body>
     <div class="topbar"></div>
-
     <nav>
       <div class="nav-inner">
         <div class="nav-name">정태수<span class="dot">.</span></div>
@@ -542,13 +558,12 @@
           <li><a href="#highlights">Highlights</a></li>
           <li><a href="#ai-cases">AI Cases</a></li>
           <li><a href="#projects">Projects</a></li>
-          <li><a href="#outsourced">외주</a></li>
+          <li><a href="#outsourced">Freelance</a></li>
           <li><a href="#education">Education</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
     </nav>
-
     <header class="hero wrap">
       <div class="eyebrow">정태수 · 포트폴리오</div>
       <h1 class="headline">
@@ -558,8 +573,10 @@
       </h1>
       <p class="hero-intro">
         53개 고객사, 1,100여 개 인스턴스 규모의 클라우드 인프라를 4년째 백엔드
-        단독 개발자로 운영해온 엔지니어입니다. <br />AI 도구로 구조적 병목을
-        진단, 해결하고 RAG 기반 AI 시스템을 직접 설계해온 경험이 있습니다.<br />
+        단독 개발자로 운영해온 엔지니어입니다. <br />개발은 혼자 진행하되, 기술
+        스택 및 오픈소스 선정 같은 핵심 기술 의사결정은 직접 제안해
+        관철시켜왔습니다.<br />AI 도구로 구조적 병목을 진단, 해결하고 RAG 기반
+        AI 시스템을 직접 설계해온 경험이 있습니다.<br />
         모니터링 데이터의 이상 감지부터 클라우드 파일 보안 점검까지, AI가 제시한
         원인과 해법을 가설로 두고 직접 쿼리와 로그로 검증한 뒤에만 반영하는
         방식으로 시스템을 운영하고 있습니다.
@@ -567,11 +584,10 @@
       <div class="contact-line">
         <span>010-8886-1573</span>
         <a href="mailto:taesu08@gmail.com">taesu08@gmail.com</a>
-        <span>백엔드 개발 4년 1개월</span>
+        <span id="tenure-hero">백엔드 개발 4년 1개월</span>
       </div>
-
       <div class="snapshot">
-        <div class="snapshot-head">AI Lab (부설 연구소) · 백엔드 개발 주도</div>
+        <div class="snapshot-head">AI Lab (부설 연구소) · 백엔드 단독 개발</div>
         <div class="stat-grid">
           <div class="stat">
             <div class="stat-name">uCMP</div>
@@ -598,17 +614,16 @@
           <strong
             >공통: AI(Codex, GPT)로 원인 진단 → 직접 검증한 뒤에만 반영</strong
           >
-          <span>4개 프로젝트를 백엔드 개발 주도로 담당</span>
+          <span>4개 프로젝트를 백엔드 단독 개발자로 담당</span>
         </div>
       </div>
     </header>
-
     <section id="highlights">
       <div class="wrap">
         <h2 class="section-title">Highlights<span class="dot">.</span></h2>
         <p class="section-intro">
-          4개 프로젝트의 성과를 무엇을 통해 이뤘는지까지 요약했습니다. 배경과
-          과정은 AI Cases, Project Deep Dives에서 이어집니다.
+          4개 프로젝트의 성과를 무엇을 통해 이뤘는지까지 요약했습니다. <br />
+          배경과 과정은 AI Cases, Project Deep Dives에서 이어집니다.
         </p>
         <ul class="highlight-list">
           <li>
@@ -640,7 +655,6 @@
         </ul>
       </div>
     </section>
-
     <section id="ai-cases">
       <div class="wrap">
         <h2 class="section-title">AI Cases<span class="dot">.</span></h2>
@@ -648,7 +662,6 @@
           AI 도구를 실무에서 어떻게 검증하며 썼는지, 대표 사례 두 가지로
           설명합니다.
         </p>
-
         <div class="case-card">
           <h3 class="case-title">
             사례 1 · uCMP 리포트 성능, 데이터 정합성 문제 해결<span class="dot"
@@ -696,7 +709,6 @@
             로그로 검증한 뒤에만 반영
           </div>
         </div>
-
         <div class="case-card">
           <h3 class="case-title">
             사례 2 · Milvus RAG 기반 AI QA ChatBot 설계<span class="dot"
@@ -734,27 +746,504 @@
         </div>
       </div>
     </section>
-
     <section id="projects">
       <div class="wrap">
         <h2 class="section-title">
           Project Deep Dives<span class="dot">.</span>
         </h2>
         <p class="section-intro">
-          Highlights에서 요약한 4개 핵심 프로젝트를 포함해, (주)터틀날리지에서
-          진행한 프로젝트를 자세히 다룹니다.
+          Highlights에서 요약한 4개 핵심 프로젝트를 포함해,
+          <br />(주)터틀날리지와 (주)유앤아워스에서 진행한 프로젝트를 자세히
+          다룹니다.
         </p>
-
         <div class="company-group">
           <div class="company-side">
             <div class="company-name">
               (주)터틀날리지<span class="dot">.</span>
             </div>
             <div class="company-meta">
-              AI Lab · 백엔드 개발<br />2022.07 – 현재
+              AI Lab · 백엔드 개발<br />2022.07 – 2026.08
             </div>
           </div>
           <div class="company-projects">
+            <p class="body-text">
+              AI Lab(부설 연구소)에서 백엔드 개발을 단독으로 담당했습니다.
+            </p>
+            <div class="field-label">
+              What did I do<span class="dot">.</span>
+            </div>
+            <ul class="bullets">
+              <li>
+                <span
+                  >연구소 자체 인프라 상시 관리,
+                  <b>OCI 비용 약 50% 절감</b></span
+                >
+              </li>
+              <li><span>Jenkins 기반 배포 파이프라인 표준화</span></li>
+            </ul>
+            <div class="diagram">
+              <div class="field-label">
+                OCI 비용 절감<span class="dot">.</span>
+              </div>
+              <svg
+                viewBox="0 0 700 210"
+                width="100%"
+                role="img"
+                aria-labelledby="t_4781833624252996198 d_5748281246826033758"
+              >
+                <title id="t_4781833624252996198">
+                  OCI 비용 절감 전후 비교
+                </title>
+                <desc id="d_5748281246826033758">
+                  24시간 상시 가동하던 인스턴스를 리소스 스케줄러와 크론으로
+                  필요한 시간에만 가동하도록 바꾼 흐름
+                </desc>
+                <defs>
+                  <marker
+                    id="arrowM"
+                    viewBox="0 0 10 10"
+                    refX="8"
+                    refY="5"
+                    markerWidth="6"
+                    markerHeight="6"
+                    orient="auto-start-reverse"
+                  >
+                    <path
+                      d="M2 1L8 5L2 9"
+                      fill="none"
+                      stroke="#8b93a0"
+                      stroke-width="1.4"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </marker>
+                </defs>
+
+                <line
+                  x1="350"
+                  y1="12"
+                  x2="350"
+                  y2="198"
+                  stroke="#e2e5ea"
+                  stroke-width="1"
+                  stroke-dasharray="3 3"
+                />
+                <text
+                  x="175"
+                  y="18"
+                  text-anchor="middle"
+                  font-size="12"
+                  fill="#14171c"
+                >
+                  Before
+                </text>
+                <text
+                  x="520"
+                  y="18"
+                  text-anchor="middle"
+                  font-size="12"
+                  fill="#14171c"
+                >
+                  After
+                </text>
+
+                <rect
+                  x="50"
+                  y="78"
+                  width="260"
+                  height="60"
+                  rx="8"
+                  fill="#ffffff"
+                  stroke="#e2e5ea"
+                  stroke-width="1"
+                />
+                <text
+                  x="180"
+                  y="99"
+                  text-anchor="middle"
+                  dominant-baseline="central"
+                  font-size="14.5"
+                  font-weight="800"
+                  fill="#5a6270"
+                >
+                  24시간 상시 가동
+                </text>
+                <text
+                  x="180"
+                  y="120"
+                  text-anchor="middle"
+                  dominant-baseline="central"
+                  font-size="12"
+                  font-weight="400"
+                  fill="#8b93a0"
+                >
+                  유휴 시간에도 비용 발생
+                </text>
+
+                <rect
+                  x="370"
+                  y="36"
+                  width="145"
+                  height="56"
+                  rx="8"
+                  fill="#ffffff"
+                  stroke="#e2e5ea"
+                  stroke-width="1"
+                />
+                <rect x="370" y="36" width="3.5" height="56" fill="#3a7bd5" />
+                <text
+                  x="442"
+                  y="55"
+                  text-anchor="middle"
+                  dominant-baseline="central"
+                  font-size="14.5"
+                  font-weight="800"
+                  fill="#14171c"
+                >
+                  리소스 스케줄러
+                </text>
+                <text
+                  x="442"
+                  y="76"
+                  text-anchor="middle"
+                  dominant-baseline="central"
+                  font-size="12"
+                  font-weight="400"
+                  fill="#5a6270"
+                >
+                  자동 시작 · 종료
+                </text>
+
+                <rect
+                  x="525"
+                  y="36"
+                  width="145"
+                  height="56"
+                  rx="8"
+                  fill="#ffffff"
+                  stroke="#e2e5ea"
+                  stroke-width="1"
+                />
+                <rect x="525" y="36" width="3.5" height="56" fill="#3a7bd5" />
+                <text
+                  x="597"
+                  y="55"
+                  text-anchor="middle"
+                  dominant-baseline="central"
+                  font-size="14.5"
+                  font-weight="800"
+                  fill="#14171c"
+                >
+                  서버 내 크론
+                </text>
+                <text
+                  x="597"
+                  y="76"
+                  text-anchor="middle"
+                  dominant-baseline="central"
+                  font-size="12"
+                  font-weight="400"
+                  fill="#5a6270"
+                >
+                  프로세스 자동화
+                </text>
+
+                <path
+                  d="M442,92 L442,106 Q442,114 452,114 L480,114 Q490,114 490,122 L490,124"
+                  fill="none"
+                  stroke="#8b93a0"
+                  stroke-width="1.3"
+                  marker-end="url(#arrowM)"
+                />
+                <path
+                  d="M597,92 L597,106 Q597,114 587,114 L565,114 Q555,114 555,122 L555,124"
+                  fill="none"
+                  stroke="#8b93a0"
+                  stroke-width="1.3"
+                  marker-end="url(#arrowM)"
+                />
+
+                <rect
+                  x="390"
+                  y="126"
+                  width="270"
+                  height="60"
+                  rx="8"
+                  fill="#ffffff"
+                  stroke="#e2e5ea"
+                  stroke-width="1"
+                />
+                <rect x="390" y="126" width="3.5" height="60" fill="#3a7bd5" />
+                <text
+                  x="525"
+                  y="147"
+                  text-anchor="middle"
+                  dominant-baseline="central"
+                  font-size="14.5"
+                  font-weight="800"
+                  fill="#14171c"
+                >
+                  필요한 시간에만 가동
+                </text>
+                <text
+                  x="525"
+                  y="168"
+                  text-anchor="middle"
+                  dominant-baseline="central"
+                  font-size="12"
+                  font-weight="400"
+                  fill="#5a6270"
+                >
+                  비용 약 50% 절감
+                </text>
+              </svg>
+              <p class="diagram-caption">
+                OCI 리소스 스케줄러(인스턴스 자동 시작·종료)와 서버 내
+                크론(애플리케이션 프로세스 자동화)을 함께 써서<br />24시간 상시
+                가동을 필요한 시간대로 줄였습니다. 1회성 정리 작업으로 진행했고,
+                비용은 OCI 콘솔에서 직접 확인합니다.
+              </p>
+            </div>
+            <div class="diagram">
+              <div class="field-label">
+                배포 · 장애 감지 자동화<span class="dot">.</span>
+              </div>
+              <svg
+                viewBox="0 0 700 280"
+                width="100%"
+                role="img"
+                aria-labelledby="t_4467397046343338331 d_7032828305342637210"
+              >
+                <title id="t_4467397046343338331">
+                  배포 및 장애 감지 자동화 구조
+                </title>
+                <desc id="d_7032828305342637210">
+                  개발기와 상용 환경의 배포 방식, OCI 알람과 uCMP 자체 알람을
+                  통한 장애 감지 구조
+                </desc>
+                <defs>
+                  <marker
+                    id="arrowM"
+                    viewBox="0 0 10 10"
+                    refX="8"
+                    refY="5"
+                    markerWidth="6"
+                    markerHeight="6"
+                    orient="auto-start-reverse"
+                  >
+                    <path
+                      d="M2 1L8 5L2 9"
+                      fill="none"
+                      stroke="#8b93a0"
+                      stroke-width="1.4"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </marker>
+                </defs>
+
+                <rect
+                  x="20"
+                  y="40"
+                  width="300"
+                  height="210"
+                  rx="16"
+                  fill="#f7f8fa"
+                  stroke="#e2e5ea"
+                  stroke-width="1"
+                />
+                <text
+                  x="44"
+                  y="68"
+                  text-anchor="start"
+                  font-size="14"
+                  font-weight="700"
+                  fill="#14171c"
+                >
+                  배포
+                </text>
+
+                <rect
+                  x="50"
+                  y="86"
+                  width="240"
+                  height="56"
+                  rx="8"
+                  fill="#ffffff"
+                  stroke="#e2e5ea"
+                  stroke-width="1"
+                />
+                <rect x="50" y="86" width="3.5" height="56" fill="#3a7bd5" />
+                <text
+                  x="170"
+                  y="99"
+                  text-anchor="middle"
+                  dominant-baseline="central"
+                  font-size="14.5"
+                  font-weight="800"
+                  fill="#14171c"
+                >
+                  개발기
+                </text>
+                <text
+                  x="170"
+                  y="120"
+                  text-anchor="middle"
+                  dominant-baseline="central"
+                  font-size="12"
+                  font-weight="400"
+                  fill="#5a6270"
+                >
+                  Jenkins Webhook 트리거
+                </text>
+
+                <rect
+                  x="50"
+                  y="156"
+                  width="240"
+                  height="56"
+                  rx="8"
+                  fill="#ffffff"
+                  stroke="#e2e5ea"
+                  stroke-width="1"
+                />
+                <rect x="50" y="156" width="3.5" height="56" fill="#3a7bd5" />
+                <text
+                  x="170"
+                  y="169"
+                  text-anchor="middle"
+                  dominant-baseline="central"
+                  font-size="14.5"
+                  font-weight="800"
+                  fill="#14171c"
+                >
+                  상용
+                </text>
+                <text
+                  x="170"
+                  y="190"
+                  text-anchor="middle"
+                  dominant-baseline="central"
+                  font-size="12"
+                  font-weight="400"
+                  fill="#5a6270"
+                >
+                  Jenkins 파이프라인 스크립트
+                </text>
+
+                <rect
+                  x="380"
+                  y="40"
+                  width="300"
+                  height="210"
+                  rx="16"
+                  fill="#f7f8fa"
+                  stroke="#e2e5ea"
+                  stroke-width="1"
+                />
+                <text
+                  x="404"
+                  y="68"
+                  text-anchor="start"
+                  font-size="14"
+                  font-weight="700"
+                  fill="#14171c"
+                >
+                  장애 감지
+                </text>
+
+                <rect
+                  x="410"
+                  y="86"
+                  width="240"
+                  height="56"
+                  rx="8"
+                  fill="#ffffff"
+                  stroke="#e2e5ea"
+                  stroke-width="1"
+                />
+                <rect x="410" y="86" width="3.5" height="56" fill="#3a7bd5" />
+                <text
+                  x="530"
+                  y="99"
+                  text-anchor="middle"
+                  dominant-baseline="central"
+                  font-size="14.5"
+                  font-weight="800"
+                  fill="#14171c"
+                >
+                  OCI 알람 서비스
+                </text>
+                <text
+                  x="530"
+                  y="120"
+                  text-anchor="middle"
+                  dominant-baseline="central"
+                  font-size="12"
+                  font-weight="400"
+                  fill="#5a6270"
+                >
+                  인프라 레벨 감지
+                </text>
+
+                <rect
+                  x="410"
+                  y="156"
+                  width="240"
+                  height="56"
+                  rx="8"
+                  fill="#ffffff"
+                  stroke="#e2e5ea"
+                  stroke-width="1"
+                />
+                <rect x="410" y="156" width="3.5" height="56" fill="#3a7bd5" />
+                <text
+                  x="530"
+                  y="169"
+                  text-anchor="middle"
+                  dominant-baseline="central"
+                  font-size="14.5"
+                  font-weight="800"
+                  fill="#14171c"
+                >
+                  uCMP 자체 알람
+                </text>
+                <text
+                  x="530"
+                  y="190"
+                  text-anchor="middle"
+                  dominant-baseline="central"
+                  font-size="12"
+                  font-weight="400"
+                  fill="#5a6270"
+                >
+                  임계치 초과 시 Slack · 메일
+                </text>
+              </svg>
+              <p class="diagram-caption">
+                상용 환경은 보안상 Webhook을 쓸 수 없어 Jenkins 파이프라인
+                스크립트로 배포합니다.<br />장애는 OCI 알람과 uCMP 자체 임계치
+                알람 두 경로로 동시에 감지합니다.<br />(신규 고객사 온보딩은
+                MSP팀이 별도로 진행합니다.)
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="company-group no-divider">
+          <div class="company-side">
+            <div class="company-name">
+              (주)유앤아워스<span class="dot">.</span>
+            </div>
+            <div class="company-meta">
+              AI Lab · 백엔드 개발<br />2026.09 – 현재<br />(주)터틀날리지
+              자회사<br />2026.09 소속 전환
+            </div>
+          </div>
+          <div class="company-projects">
+            <p class="body-text">
+              (주)터틀날리지 자회사로 소속이 전환되어, 동일한 AI Lab에서 아래
+              프로젝트를 이어가고 있습니다.
+            </p>
             <article class="project">
               <h3 class="project-title">
                 UNO-Proxy · Envoy 기반 Proxy 운영 도구<span class="dot">.</span>
@@ -773,6 +1262,785 @@
                 싶다는 니즈)으로 시작해 3개월 데드라인 안에 구축했습니다 (Envoy
                 오픈소스 코어 활용, Nginx Plus 등과 비교 후 선정).
               </p>
+              <div class="diagram">
+                <div class="field-label">
+                  배포 파이프라인<span class="dot">.</span>
+                </div>
+                <svg
+                  viewBox="0 0 700 390"
+                  width="100%"
+                  role="img"
+                  aria-labelledby="t_8093686450622093863 d_6367313484262254810"
+                >
+                  <title id="t_8093686450622093863">
+                    UNO-Proxy 배포 파이프라인
+                  </title>
+                  <desc id="d_6367313484262254810">
+                    관리자 업로드부터 Master 검증, Agent 전달까지의 흐름
+                  </desc>
+                  <defs>
+                    <marker
+                      id="arrowM"
+                      viewBox="0 0 10 10"
+                      refX="8"
+                      refY="5"
+                      markerWidth="6"
+                      markerHeight="6"
+                      orient="auto-start-reverse"
+                    >
+                      <path
+                        d="M2 1L8 5L2 9"
+                        fill="none"
+                        stroke="#8b93a0"
+                        stroke-width="1.4"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </marker>
+                  </defs>
+
+                  <rect
+                    x="200"
+                    y="20"
+                    width="300"
+                    height="56"
+                    rx="8"
+                    fill="#ffffff"
+                    stroke="#e2e5ea"
+                    stroke-width="1"
+                  />
+                  <text
+                    x="350"
+                    y="39"
+                    text-anchor="middle"
+                    dominant-baseline="central"
+                    font-size="14.5"
+                    font-weight="800"
+                    fill="#14171c"
+                  >
+                    관리자 업로드
+                  </text>
+                  <text
+                    x="350"
+                    y="60"
+                    text-anchor="middle"
+                    dominant-baseline="central"
+                    font-size="12"
+                    font-weight="400"
+                    fill="#5a6270"
+                  >
+                    Web 업로드 · 대상 서버 선택
+                  </text>
+                  <line
+                    x1="350"
+                    y1="76"
+                    x2="350"
+                    y2="98"
+                    stroke="#8b93a0"
+                    stroke-width="1.3"
+                    marker-end="url(#arrowM)"
+                  />
+
+                  <rect
+                    x="230"
+                    y="100"
+                    width="240"
+                    height="56"
+                    rx="8"
+                    fill="#ffffff"
+                    stroke="#e2e5ea"
+                    stroke-width="1"
+                  />
+                  <rect
+                    x="230"
+                    y="100"
+                    width="3.5"
+                    height="56"
+                    fill="#3a7bd5"
+                  />
+                  <text
+                    x="358"
+                    y="119"
+                    text-anchor="middle"
+                    dominant-baseline="central"
+                    font-size="14.5"
+                    font-weight="800"
+                    fill="#14171c"
+                  >
+                    Master (Spring)
+                  </text>
+                  <text
+                    x="358"
+                    y="140"
+                    text-anchor="middle"
+                    dominant-baseline="central"
+                    font-size="12"
+                    font-weight="400"
+                    fill="#5a6270"
+                  >
+                    xDS 호출로 yaml 생성
+                  </text>
+                  <line
+                    x1="350"
+                    y1="156"
+                    x2="350"
+                    y2="178"
+                    stroke="#8b93a0"
+                    stroke-width="1.3"
+                    marker-end="url(#arrowM)"
+                  />
+
+                  <rect
+                    x="200"
+                    y="180"
+                    width="300"
+                    height="56"
+                    rx="8"
+                    fill="#ffffff"
+                    stroke="#e2e5ea"
+                    stroke-width="1"
+                  />
+                  <rect
+                    x="200"
+                    y="180"
+                    width="3.5"
+                    height="56"
+                    fill="#3a7bd5"
+                  />
+                  <text
+                    x="358"
+                    y="199"
+                    text-anchor="middle"
+                    dominant-baseline="central"
+                    font-size="14.5"
+                    font-weight="800"
+                    fill="#14171c"
+                  >
+                    Envoy 사전 검증
+                  </text>
+                  <text
+                    x="358"
+                    y="220"
+                    text-anchor="middle"
+                    dominant-baseline="central"
+                    font-size="12"
+                    font-weight="400"
+                    fill="#5a6270"
+                  >
+                    Master 내 Proxy로 동작 테스트
+                  </text>
+
+                  <path
+                    d="M350,236 L350,252 Q350,260 340,260 L200,260 Q190,260 190,268 L190,286"
+                    fill="none"
+                    stroke="#8b93a0"
+                    stroke-width="1.3"
+                    marker-end="url(#arrowM)"
+                  />
+                  <path
+                    d="M350,236 L350,252 Q350,260 360,260 L530,260 Q540,260 540,268 L540,286"
+                    fill="none"
+                    stroke="#8b93a0"
+                    stroke-width="1.3"
+                    stroke-dasharray="3 3"
+                    marker-end="url(#arrowM)"
+                  />
+                  <text
+                    x="270"
+                    y="253"
+                    text-anchor="middle"
+                    font-size="11.5"
+                    fill="#5a6270"
+                  >
+                    성공
+                  </text>
+                  <text
+                    x="445"
+                    y="253"
+                    text-anchor="middle"
+                    font-size="11.5"
+                    fill="#8b93a0"
+                  >
+                    실패
+                  </text>
+
+                  <rect
+                    x="50"
+                    y="290"
+                    width="280"
+                    height="60"
+                    rx="8"
+                    fill="#ffffff"
+                    stroke="#e2e5ea"
+                    stroke-width="1"
+                  />
+                  <rect x="50" y="290" width="3.5" height="60" fill="#3a7bd5" />
+                  <text
+                    x="198"
+                    y="311"
+                    text-anchor="middle"
+                    dominant-baseline="central"
+                    font-size="14.5"
+                    font-weight="800"
+                    fill="#14171c"
+                  >
+                    Agent 전달
+                  </text>
+                  <text
+                    x="198"
+                    y="332"
+                    text-anchor="middle"
+                    dominant-baseline="central"
+                    font-size="12"
+                    font-weight="400"
+                    fill="#5a6270"
+                  >
+                    yaml·ssl 설정·키 선택 배포
+                  </text>
+
+                  <rect
+                    x="400"
+                    y="290"
+                    width="280"
+                    height="60"
+                    rx="8"
+                    fill="#ffffff"
+                    stroke="#c9cdd4"
+                    stroke-width="1"
+                    stroke-dasharray="4 3"
+                  />
+                  <text
+                    x="540"
+                    y="311"
+                    text-anchor="middle"
+                    dominant-baseline="central"
+                    font-size="14.5"
+                    font-weight="800"
+                    fill="#5a6270"
+                  >
+                    상태 fail 저장
+                  </text>
+                  <text
+                    x="540"
+                    y="332"
+                    text-anchor="middle"
+                    dominant-baseline="central"
+                    font-size="12"
+                    font-weight="400"
+                    fill="#8b93a0"
+                  >
+                    배포 중단, 별도 알림 없음
+                  </text>
+                </svg>
+                <p class="diagram-caption">
+                  검증은 운영 서버가 아니라 Master 내부에 설치된 Envoy에서 먼저
+                  이뤄지고,<br />여기를 통과한 파일만 실제 Agent로 전달됩니다.
+                </p>
+              </div>
+              <div class="diagram">
+                <div class="field-label">
+                  설정 반영 방식<span class="dot">.</span>
+                </div>
+                <svg
+                  viewBox="0 0 700 330"
+                  width="100%"
+                  role="img"
+                  aria-labelledby="t_26407065123409849 d_5051769251929738148"
+                >
+                  <title id="t_26407065123409849">
+                    UNO-Proxy 설정 반영 방식
+                  </title>
+                  <desc id="d_5051769251929738148">
+                    SSL 파일과 정적 설정 변경에 따라 다르게 반영되는 방식
+                  </desc>
+                  <defs>
+                    <marker
+                      id="arrowM"
+                      viewBox="0 0 10 10"
+                      refX="8"
+                      refY="5"
+                      markerWidth="6"
+                      markerHeight="6"
+                      orient="auto-start-reverse"
+                    >
+                      <path
+                        d="M2 1L8 5L2 9"
+                        fill="none"
+                        stroke="#8b93a0"
+                        stroke-width="1.4"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </marker>
+                  </defs>
+
+                  <rect
+                    x="225"
+                    y="20"
+                    width="250"
+                    height="56"
+                    rx="8"
+                    fill="#ffffff"
+                    stroke="#e2e5ea"
+                    stroke-width="1"
+                  />
+                  <rect x="225" y="20" width="3.5" height="56" fill="#3a7bd5" />
+                  <text
+                    x="350"
+                    y="39"
+                    text-anchor="middle"
+                    dominant-baseline="central"
+                    font-size="14.5"
+                    font-weight="800"
+                    fill="#14171c"
+                  >
+                    Agent 설정 수신
+                  </text>
+                  <text
+                    x="350"
+                    y="60"
+                    text-anchor="middle"
+                    dominant-baseline="central"
+                    font-size="12"
+                    font-weight="400"
+                    fill="#5a6270"
+                  >
+                    yaml · ssl 파일
+                  </text>
+
+                  <path
+                    d="M350,76 L350,92 Q350,100 340,100 L200,100 Q190,100 190,108 L190,128"
+                    fill="none"
+                    stroke="#8b93a0"
+                    stroke-width="1.3"
+                    marker-end="url(#arrowM)"
+                  />
+                  <path
+                    d="M350,76 L350,92 Q350,100 360,100 L520,100 Q530,100 530,108 L530,128"
+                    fill="none"
+                    stroke="#8b93a0"
+                    stroke-width="1.3"
+                    marker-end="url(#arrowM)"
+                  />
+
+                  <rect
+                    x="40"
+                    y="130"
+                    width="300"
+                    height="60"
+                    rx="8"
+                    fill="#ffffff"
+                    stroke="#e2e5ea"
+                    stroke-width="1"
+                  />
+                  <rect x="40" y="130" width="3.5" height="60" fill="#3a7bd5" />
+                  <text
+                    x="190"
+                    y="142"
+                    text-anchor="middle"
+                    dominant-baseline="central"
+                    font-size="14.5"
+                    font-weight="800"
+                    fill="#14171c"
+                  >
+                    Envoy 자동 감지
+                  </text>
+                  <text
+                    x="190"
+                    y="163"
+                    text-anchor="middle"
+                    dominant-baseline="central"
+                    font-size="12"
+                    font-weight="400"
+                    fill="#5a6270"
+                  >
+                    SSL 파일 변경 시 즉시 갱신
+                  </text>
+
+                  <rect
+                    x="380"
+                    y="130"
+                    width="300"
+                    height="60"
+                    rx="8"
+                    fill="#ffffff"
+                    stroke="#e2e5ea"
+                    stroke-width="1"
+                  />
+                  <text
+                    x="530"
+                    y="142"
+                    text-anchor="middle"
+                    dominant-baseline="central"
+                    font-size="14.5"
+                    font-weight="800"
+                    fill="#14171c"
+                  >
+                    hot restart 호출
+                  </text>
+                  <text
+                    x="530"
+                    y="163"
+                    text-anchor="middle"
+                    dominant-baseline="central"
+                    font-size="12"
+                    font-weight="400"
+                    fill="#5a6270"
+                  >
+                    main yaml 등 정적 설정 변경 시
+                  </text>
+
+                  <path
+                    d="M190,190 L190,202 Q190,210 200,210 L290,210 Q300,210 300,218 L300,230"
+                    fill="none"
+                    stroke="#8b93a0"
+                    stroke-width="1.3"
+                    marker-end="url(#arrowM)"
+                  />
+                  <path
+                    d="M530,190 L530,202 Q530,210 520,210 L410,210 Q400,210 400,218 L400,230"
+                    fill="none"
+                    stroke="#8b93a0"
+                    stroke-width="1.3"
+                    marker-end="url(#arrowM)"
+                  />
+
+                  <rect
+                    x="170"
+                    y="230"
+                    width="360"
+                    height="60"
+                    rx="8"
+                    fill="#ffffff"
+                    stroke="#e2e5ea"
+                    stroke-width="1"
+                  />
+                  <text
+                    x="350"
+                    y="242"
+                    text-anchor="middle"
+                    dominant-baseline="central"
+                    font-size="14.5"
+                    font-weight="800"
+                    fill="#14171c"
+                  >
+                    Envoy 반영 완료
+                  </text>
+                  <text
+                    x="350"
+                    y="263"
+                    text-anchor="middle"
+                    dominant-baseline="central"
+                    font-size="12"
+                    font-weight="400"
+                    fill="#5a6270"
+                  >
+                    Agent-Envoy 1:1 매핑 · 고객사 4대 인스턴스
+                  </text>
+                </svg>
+                <p class="diagram-caption">
+                  SSL 인증서는 파일 업데이트만으로 Envoy가 즉시 반영하지만,<br />동적으로
+                  반영되지 않는 설정(로그 경로 등)은 hot restart로 적용합니다.
+                </p>
+              </div>
+              <div class="diagram">
+                <div class="field-label">
+                  서버 구축 환경<span class="dot">.</span>
+                </div>
+                <svg
+                  viewBox="0 0 700 340"
+                  width="100%"
+                  role="img"
+                  aria-labelledby="t_24988802761616023 d_5323215631147925622"
+                >
+                  <title id="t_24988802761616023">
+                    UNO-Proxy 인프라 아키텍처
+                  </title>
+                  <desc id="d_5323215631147925622">
+                    Master 서버(사내망)와 Agent 서버(DMZ)의 구성과 연결
+                  </desc>
+                  <defs>
+                    <marker
+                      id="arrowM"
+                      viewBox="0 0 10 10"
+                      refX="8"
+                      refY="5"
+                      markerWidth="6"
+                      markerHeight="6"
+                      orient="auto-start-reverse"
+                    >
+                      <path
+                        d="M2 1L8 5L2 9"
+                        fill="none"
+                        stroke="#8b93a0"
+                        stroke-width="1.4"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </marker>
+                  </defs>
+
+                  <rect
+                    x="20"
+                    y="60"
+                    width="300"
+                    height="240"
+                    rx="16"
+                    fill="#f7f8fa"
+                    stroke="#e2e5ea"
+                    stroke-width="1"
+                  />
+                  <text
+                    x="44"
+                    y="90"
+                    text-anchor="start"
+                    font-size="14"
+                    font-weight="700"
+                    fill="#14171c"
+                  >
+                    Master 서버
+                  </text>
+                  <text
+                    x="44"
+                    y="108"
+                    text-anchor="start"
+                    font-size="11"
+                    font-weight="400"
+                    fill="#5a6270"
+                  >
+                    사내망
+                  </text>
+
+                  <rect
+                    x="50"
+                    y="126"
+                    width="240"
+                    height="56"
+                    rx="8"
+                    fill="#ffffff"
+                    stroke="#e2e5ea"
+                    stroke-width="1"
+                  />
+                  <rect x="50" y="126" width="3.5" height="56" fill="#3a7bd5" />
+                  <text
+                    x="170"
+                    y="139"
+                    text-anchor="middle"
+                    dominant-baseline="central"
+                    font-size="14.5"
+                    font-weight="800"
+                    fill="#14171c"
+                  >
+                    Spring (Master)
+                  </text>
+                  <text
+                    x="170"
+                    y="160"
+                    text-anchor="middle"
+                    dominant-baseline="central"
+                    font-size="12"
+                    font-weight="400"
+                    fill="#5a6270"
+                  >
+                    xDS API 호출 · 검증
+                  </text>
+                  <line
+                    x1="170"
+                    y1="182"
+                    x2="170"
+                    y2="204"
+                    stroke="#8b93a0"
+                    stroke-width="1.3"
+                    marker-end="url(#arrowM)"
+                  />
+
+                  <rect
+                    x="105"
+                    y="250"
+                    width="130"
+                    height="56"
+                    fill="#ffffff"
+                    stroke="#e2e5ea"
+                    stroke-width="1"
+                  />
+                  <ellipse
+                    cx="170"
+                    cy="250"
+                    rx="65"
+                    ry="10"
+                    fill="#ffffff"
+                    stroke="#e2e5ea"
+                    stroke-width="1"
+                  />
+                  <text
+                    x="170"
+                    y="272"
+                    text-anchor="middle"
+                    dominant-baseline="central"
+                    font-size="13.5"
+                    font-weight="800"
+                    fill="#14171c"
+                  >
+                    DB
+                  </text>
+                  <text
+                    x="170"
+                    y="290"
+                    text-anchor="middle"
+                    font-size="11"
+                    fill="#5a6270"
+                  >
+                    설정 버전 · 검증 상태 저장
+                  </text>
+
+                  <rect
+                    x="380"
+                    y="60"
+                    width="300"
+                    height="240"
+                    rx="16"
+                    fill="#f7f8fa"
+                    stroke="#e2e5ea"
+                    stroke-width="1"
+                  />
+                  <text
+                    x="404"
+                    y="90"
+                    text-anchor="start"
+                    font-size="14"
+                    font-weight="700"
+                    fill="#14171c"
+                  >
+                    Agent 서버
+                  </text>
+                  <text
+                    x="404"
+                    y="108"
+                    text-anchor="start"
+                    font-size="11"
+                    font-weight="400"
+                    fill="#5a6270"
+                  >
+                    DMZ · 동일 구성 ×4
+                  </text>
+
+                  <rect
+                    x="410"
+                    y="126"
+                    width="240"
+                    height="56"
+                    rx="8"
+                    fill="#ffffff"
+                    stroke="#e2e5ea"
+                    stroke-width="1"
+                  />
+                  <rect
+                    x="410"
+                    y="126"
+                    width="3.5"
+                    height="56"
+                    fill="#3a7bd5"
+                  />
+                  <text
+                    x="530"
+                    y="139"
+                    text-anchor="middle"
+                    dominant-baseline="central"
+                    font-size="14.5"
+                    font-weight="800"
+                    fill="#14171c"
+                  >
+                    Agent (Go)
+                  </text>
+                  <text
+                    x="530"
+                    y="160"
+                    text-anchor="middle"
+                    dominant-baseline="central"
+                    font-size="12"
+                    font-weight="400"
+                    fill="#5a6270"
+                  >
+                    설정 파일 적용
+                  </text>
+                  <line
+                    x1="530"
+                    y1="182"
+                    x2="530"
+                    y2="204"
+                    stroke="#8b93a0"
+                    stroke-width="1.3"
+                    marker-end="url(#arrowM)"
+                  />
+
+                  <rect
+                    x="410"
+                    y="206"
+                    width="240"
+                    height="56"
+                    rx="8"
+                    fill="#ffffff"
+                    stroke="#e2e5ea"
+                    stroke-width="1"
+                  />
+                  <text
+                    x="530"
+                    y="219"
+                    text-anchor="middle"
+                    dominant-baseline="central"
+                    font-size="14.5"
+                    font-weight="800"
+                    fill="#14171c"
+                  >
+                    Envoy (Proxy)
+                  </text>
+                  <text
+                    x="530"
+                    y="240"
+                    text-anchor="middle"
+                    dominant-baseline="central"
+                    font-size="12"
+                    font-weight="400"
+                    fill="#5a6270"
+                  >
+                    hot restart · 자동 갱신
+                  </text>
+
+                  <line
+                    x1="320"
+                    y1="180"
+                    x2="378"
+                    y2="180"
+                    stroke="#8b93a0"
+                    stroke-width="1.3"
+                    stroke-dasharray="3 3"
+                    marker-end="url(#arrowM)"
+                  />
+                  <text
+                    x="350"
+                    y="156"
+                    text-anchor="middle"
+                    font-size="11.5"
+                    fill="#5a6270"
+                  >
+                    API 호출
+                  </text>
+                  <text
+                    x="350"
+                    y="168"
+                    text-anchor="middle"
+                    font-size="11.5"
+                    fill="#5a6270"
+                  >
+                    yaml 전달
+                  </text>
+                </svg>
+                <p class="diagram-caption">
+                  Master는 사내망에서 설정을 생성·검증하고, DMZ에 있는
+                  Agent-Envoy 쌍(고객사당 4대)에<br />API로 파일을 전달합니다.
+                  두 서버는 물리적으로도, 네트워크 구간으로도 분리돼 있습니다.
+                </p>
+              </div>
               <div class="field-label">
                 What did I do<span class="dot">.</span>
               </div>
@@ -806,7 +2074,6 @@
                 ><span>TLS/SSL</span>
               </div>
             </article>
-
             <article class="project">
               <h3 class="project-title">
                 API Gateway · 금융권 고객사 API 연동, 운영<span class="dot"
@@ -825,6 +2092,569 @@
                 금융권 8곳, 비금융권 2곳의 API Gateway를 유지보수하며 JWT 인증
                 처리와 고가용성 운영을 담당하고 있습니다.
               </p>
+              <div class="diagram">
+                <div class="field-label">
+                  SSE 중계 · 마스킹 흐름<span class="dot">.</span>
+                </div>
+                <svg
+                  viewBox="0 0 700 440"
+                  width="100%"
+                  role="img"
+                  aria-labelledby="t_5300275938543494822 d_2907156850274610575"
+                >
+                  <title id="t_5300275938543494822">SSE 중계 마스킹 흐름</title>
+                  <desc id="d_2907156850274610575">
+                    금융권 클라이언트 요청이 그대로 전달되거나 민감정보 마스킹
+                    후 외부 AI API로 전달되는 흐름
+                  </desc>
+                  <defs>
+                    <marker
+                      id="arrowM"
+                      viewBox="0 0 10 10"
+                      refX="8"
+                      refY="5"
+                      markerWidth="6"
+                      markerHeight="6"
+                      orient="auto-start-reverse"
+                    >
+                      <path
+                        d="M2 1L8 5L2 9"
+                        fill="none"
+                        stroke="#8b93a0"
+                        stroke-width="1.4"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </marker>
+                  </defs>
+
+                  <rect
+                    x="220"
+                    y="20"
+                    width="260"
+                    height="50"
+                    rx="8"
+                    fill="#ffffff"
+                    stroke="#e2e5ea"
+                    stroke-width="1"
+                  />
+                  <text
+                    x="350"
+                    y="45"
+                    text-anchor="middle"
+                    dominant-baseline="central"
+                    font-size="14.5"
+                    font-weight="800"
+                    fill="#14171c"
+                  >
+                    금융권 클라이언트
+                  </text>
+                  <line
+                    x1="350"
+                    y1="70"
+                    x2="350"
+                    y2="92"
+                    stroke="#8b93a0"
+                    stroke-width="1.3"
+                    marker-end="url(#arrowM)"
+                  />
+
+                  <rect
+                    x="240"
+                    y="94"
+                    width="220"
+                    height="60"
+                    rx="8"
+                    fill="#ffffff"
+                    stroke="#e2e5ea"
+                    stroke-width="1"
+                  />
+                  <rect x="240" y="94" width="3.5" height="60" fill="#3a7bd5" />
+                  <text
+                    x="350"
+                    y="115"
+                    text-anchor="middle"
+                    dominant-baseline="central"
+                    font-size="14.5"
+                    font-weight="800"
+                    fill="#14171c"
+                  >
+                    Gateway
+                  </text>
+                  <text
+                    x="350"
+                    y="136"
+                    text-anchor="middle"
+                    dominant-baseline="central"
+                    font-size="12"
+                    font-weight="400"
+                    fill="#5a6270"
+                  >
+                    SSE 중계
+                  </text>
+
+                  <path
+                    d="M350,154 L350,170 Q350,178 340,178 L200,178 Q190,178 190,186 L190,290 Q190,299 200,299 L246,299"
+                    fill="none"
+                    stroke="#8b93a0"
+                    stroke-width="1.3"
+                    marker-end="url(#arrowM)"
+                  />
+                  <text
+                    x="270"
+                    y="172"
+                    text-anchor="middle"
+                    font-size="11.5"
+                    fill="#5a6270"
+                  >
+                    그대로 전달
+                  </text>
+
+                  <path
+                    d="M350,154 L350,170 Q350,178 360,178 L530,178 Q540,178 540,186 L540,188"
+                    fill="none"
+                    stroke="#8b93a0"
+                    stroke-width="1.3"
+                    marker-end="url(#arrowM)"
+                  />
+
+                  <rect
+                    x="410"
+                    y="190"
+                    width="240"
+                    height="56"
+                    rx="8"
+                    fill="#ffffff"
+                    stroke="#e2e5ea"
+                    stroke-width="1"
+                  />
+                  <rect
+                    x="410"
+                    y="190"
+                    width="3.5"
+                    height="56"
+                    fill="#3a7bd5"
+                  />
+                  <text
+                    x="530"
+                    y="203"
+                    text-anchor="middle"
+                    dominant-baseline="central"
+                    font-size="14.5"
+                    font-weight="800"
+                    fill="#14171c"
+                  >
+                    민감정보 마스킹
+                  </text>
+                  <text
+                    x="530"
+                    y="224"
+                    text-anchor="middle"
+                    dominant-baseline="central"
+                    font-size="12"
+                    font-weight="400"
+                    fill="#5a6270"
+                  >
+                    주민등록번호 등 제거
+                  </text>
+
+                  <path
+                    d="M530,246 L530,284 Q530,292 520,292 L462,292 Q452,292 452,299 L454,299"
+                    fill="none"
+                    stroke="#8b93a0"
+                    stroke-width="1.3"
+                    marker-end="url(#arrowM)"
+                  />
+
+                  <rect
+                    x="250"
+                    y="272"
+                    width="200"
+                    height="54"
+                    rx="8"
+                    fill="#ffffff"
+                    stroke="#e2e5ea"
+                    stroke-width="1"
+                  />
+                  <text
+                    x="350"
+                    y="285"
+                    text-anchor="middle"
+                    dominant-baseline="central"
+                    font-size="14.5"
+                    font-weight="800"
+                    fill="#5a6270"
+                  >
+                    외부 AI API
+                  </text>
+                  <text
+                    x="350"
+                    y="306"
+                    text-anchor="middle"
+                    dominant-baseline="central"
+                    font-size="12"
+                    font-weight="400"
+                    fill="#8b93a0"
+                  >
+                    스트리밍 응답 생성
+                  </text>
+
+                  <line
+                    x1="350"
+                    y1="326"
+                    x2="350"
+                    y2="348"
+                    stroke="#8b93a0"
+                    stroke-width="1.3"
+                    marker-end="url(#arrowM)"
+                  />
+
+                  <rect
+                    x="225"
+                    y="350"
+                    width="250"
+                    height="54"
+                    rx="8"
+                    fill="#ffffff"
+                    stroke="#e2e5ea"
+                    stroke-width="1"
+                  />
+                  <rect
+                    x="225"
+                    y="350"
+                    width="3.5"
+                    height="54"
+                    fill="#3a7bd5"
+                  />
+                  <text
+                    x="350"
+                    y="363"
+                    text-anchor="middle"
+                    dominant-baseline="central"
+                    font-size="14.5"
+                    font-weight="800"
+                    fill="#14171c"
+                  >
+                    Gateway
+                  </text>
+                  <text
+                    x="350"
+                    y="384"
+                    text-anchor="middle"
+                    dominant-baseline="central"
+                    font-size="12"
+                    font-weight="400"
+                    fill="#5a6270"
+                  >
+                    스트리밍 응답을 클라이언트로 중계
+                  </text>
+                </svg>
+                <p class="diagram-caption">
+                  같은 Gateway를 거치더라도 고객사 설정에 따라 마스킹 여부가
+                  달라집니다.<br />마스킹은 주민등록번호 등 식별 정보를 제거한
+                  뒤에만 외부 AI API를 호출합니다.
+                </p>
+              </div>
+              <div class="diagram">
+                <div class="field-label">
+                  Spring Boot 3 업그레이드<span class="dot">.</span>
+                </div>
+                <svg
+                  viewBox="0 0 700 400"
+                  width="100%"
+                  role="img"
+                  aria-labelledby="t_8089139378122281898 d_6560299726062027710"
+                >
+                  <title id="t_8089139378122281898">
+                    Spring Boot 2에서 3으로의 업그레이드 대응
+                  </title>
+                  <desc id="d_6560299726062027710">
+                    고객사 보안 요구사항으로 시작된 업그레이드를 상용은 유지한
+                    채 내부 테스트 환경에서 일괄 전환해 검증하는 흐름
+                  </desc>
+                  <defs>
+                    <marker
+                      id="arrowM"
+                      viewBox="0 0 10 10"
+                      refX="8"
+                      refY="5"
+                      markerWidth="6"
+                      markerHeight="6"
+                      orient="auto-start-reverse"
+                    >
+                      <path
+                        d="M2 1L8 5L2 9"
+                        fill="none"
+                        stroke="#8b93a0"
+                        stroke-width="1.4"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </marker>
+                  </defs>
+
+                  <rect
+                    x="225"
+                    y="20"
+                    width="250"
+                    height="50"
+                    rx="8"
+                    fill="#ffffff"
+                    stroke="#e2e5ea"
+                    stroke-width="1"
+                  />
+                  <text
+                    x="350"
+                    y="36"
+                    text-anchor="middle"
+                    dominant-baseline="central"
+                    font-size="14.5"
+                    font-weight="800"
+                    fill="#5a6270"
+                  >
+                    업그레이드 트리거
+                  </text>
+                  <text
+                    x="350"
+                    y="57"
+                    text-anchor="middle"
+                    dominant-baseline="central"
+                    font-size="12"
+                    font-weight="400"
+                    fill="#8b93a0"
+                  >
+                    고객사 보안 요구사항
+                  </text>
+
+                  <path
+                    d="M350,70 L350,86 Q350,94 340,94 L200,94 Q190,94 190,102 L190,108"
+                    fill="none"
+                    stroke="#8b93a0"
+                    stroke-width="1.3"
+                    marker-end="url(#arrowM)"
+                  />
+                  <path
+                    d="M350,70 L350,86 Q350,94 360,94 L510,94 Q520,94 520,102 L520,108"
+                    fill="none"
+                    stroke="#8b93a0"
+                    stroke-width="1.3"
+                    marker-end="url(#arrowM)"
+                  />
+
+                  <rect
+                    x="20"
+                    y="110"
+                    width="300"
+                    height="140"
+                    rx="16"
+                    fill="#f7f8fa"
+                    stroke="#e2e5ea"
+                    stroke-width="1"
+                  />
+                  <text
+                    x="44"
+                    y="140"
+                    text-anchor="start"
+                    font-size="14"
+                    font-weight="700"
+                    fill="#14171c"
+                  >
+                    상용 환경
+                  </text>
+                  <text
+                    x="44"
+                    y="158"
+                    text-anchor="start"
+                    font-size="11"
+                    font-weight="400"
+                    fill="#5a6270"
+                  >
+                    Spring Boot 2.x
+                  </text>
+                  <rect
+                    x="50"
+                    y="176"
+                    width="240"
+                    height="54"
+                    rx="8"
+                    fill="#ffffff"
+                    stroke="#e2e5ea"
+                    stroke-width="1"
+                  />
+                  <text
+                    x="170"
+                    y="194"
+                    text-anchor="middle"
+                    dominant-baseline="central"
+                    font-size="14.5"
+                    font-weight="800"
+                    fill="#5a6270"
+                  >
+                    계속 운영
+                  </text>
+                  <text
+                    x="170"
+                    y="215"
+                    text-anchor="middle"
+                    dominant-baseline="central"
+                    font-size="12"
+                    font-weight="400"
+                    fill="#8b93a0"
+                  >
+                    영향 없음
+                  </text>
+
+                  <rect
+                    x="380"
+                    y="110"
+                    width="300"
+                    height="252"
+                    rx="16"
+                    fill="#f7f8fa"
+                    stroke="#e2e5ea"
+                    stroke-width="1"
+                  />
+                  <text
+                    x="404"
+                    y="140"
+                    text-anchor="start"
+                    font-size="14"
+                    font-weight="700"
+                    fill="#14171c"
+                  >
+                    내부 테스트 환경
+                  </text>
+                  <text
+                    x="404"
+                    y="158"
+                    text-anchor="start"
+                    font-size="11"
+                    font-weight="400"
+                    fill="#5a6270"
+                  >
+                    Spring Boot 3.x · 일괄 전환
+                  </text>
+                  <rect
+                    x="410"
+                    y="176"
+                    width="240"
+                    height="50"
+                    rx="8"
+                    fill="#ffffff"
+                    stroke="#e2e5ea"
+                    stroke-width="1"
+                  />
+                  <rect
+                    x="410"
+                    y="176"
+                    width="3.5"
+                    height="50"
+                    fill="#3a7bd5"
+                  />
+                  <text
+                    x="530"
+                    y="192"
+                    text-anchor="middle"
+                    dominant-baseline="central"
+                    font-size="14.5"
+                    font-weight="800"
+                    fill="#14171c"
+                  >
+                    패키지 전환
+                  </text>
+                  <text
+                    x="530"
+                    y="213"
+                    text-anchor="middle"
+                    dominant-baseline="central"
+                    font-size="12"
+                    font-weight="400"
+                    fill="#5a6270"
+                  >
+                    javax → jakarta
+                  </text>
+                  <rect
+                    x="410"
+                    y="234"
+                    width="240"
+                    height="50"
+                    rx="8"
+                    fill="#ffffff"
+                    stroke="#e2e5ea"
+                    stroke-width="1"
+                  />
+                  <rect
+                    x="410"
+                    y="234"
+                    width="3.5"
+                    height="50"
+                    fill="#3a7bd5"
+                  />
+                  <text
+                    x="530"
+                    y="250"
+                    text-anchor="middle"
+                    dominant-baseline="central"
+                    font-size="14.5"
+                    font-weight="800"
+                    fill="#14171c"
+                  >
+                    외부 라이브러리 재검증
+                  </text>
+                  <text
+                    x="530"
+                    y="271"
+                    text-anchor="middle"
+                    dominant-baseline="central"
+                    font-size="12"
+                    font-weight="400"
+                    fill="#5a6270"
+                  >
+                    일부 기능 삭제 · 사용 불가 대응
+                  </text>
+                  <rect
+                    x="410"
+                    y="292"
+                    width="240"
+                    height="50"
+                    rx="8"
+                    fill="#ffffff"
+                    stroke="#c9cdd4"
+                    stroke-width="1"
+                    stroke-dasharray="4 3"
+                  />
+                  <text
+                    x="530"
+                    y="308"
+                    text-anchor="middle"
+                    dominant-baseline="central"
+                    font-size="14.5"
+                    font-weight="800"
+                    fill="#5a6270"
+                  >
+                    검증 후 반영 예정
+                  </text>
+                  <text
+                    x="530"
+                    y="329"
+                    text-anchor="middle"
+                    dominant-baseline="central"
+                    font-size="12"
+                    font-weight="400"
+                    fill="#8b93a0"
+                  >
+                    상용 배포는 별도 일정
+                  </text>
+                </svg>
+                <p class="diagram-caption">
+                  상용은 Spring Boot 2.x로 그대로 운영하면서, 내부 테스트
+                  환경에서 3.x로 한 번에 전환해 검증했습니다.<br />패키지
+                  변경(javax → jakarta)뿐 아니라, Gateway 기능이 의존하던 외부
+                  라이브러리가 삭제되거나<br />동작하지 않게 된 부분까지 함께
+                  확인해야 했습니다. 상용 반영은 검증 후 별도 일정으로
+                  진행합니다.
+                </p>
+              </div>
               <div class="field-label">
                 What did I do<span class="dot">.</span>
               </div>
@@ -850,7 +2680,6 @@
                 <span>Spring Framework</span><span>Database</span>
               </div>
             </article>
-
             <article class="project">
               <h3 class="project-title">
                 uCMP · 클라우드 리소스 모니터링, 자동 리포팅<span class="dot"
@@ -870,6 +2699,579 @@
                 53개 고객사, 1,100여 개 인스턴스, 약 4TB 규모의 모니터링·리포팅
                 시스템을 인수해 고도화, 운영하고 있습니다 (Thymeleaf 대시보드).
               </p>
+              <div class="diagram">
+                <div class="field-label">
+                  메트릭 누락 감지 · 재조회<span class="dot">.</span>
+                </div>
+                <svg
+                  viewBox="0 0 700 370"
+                  width="100%"
+                  role="img"
+                  aria-labelledby="t_8237875508667701561 d_8401970728633783004"
+                >
+                  <title id="t_8237875508667701561">
+                    uCMP 메트릭 누락 감지 및 재조회 흐름
+                  </title>
+                  <desc id="d_8401970728633783004">
+                    UI 육안 확인과 Slack 자동 알람으로 감지하고, 사용자 수동
+                    재조회와 Agent 자동 백필로 복구
+                  </desc>
+                  <defs>
+                    <marker
+                      id="arrowM"
+                      viewBox="0 0 10 10"
+                      refX="8"
+                      refY="5"
+                      markerWidth="6"
+                      markerHeight="6"
+                      orient="auto-start-reverse"
+                    >
+                      <path
+                        d="M2 1L8 5L2 9"
+                        fill="none"
+                        stroke="#8b93a0"
+                        stroke-width="1.4"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </marker>
+                  </defs>
+
+                  <rect
+                    x="60"
+                    y="20"
+                    width="260"
+                    height="54"
+                    rx="8"
+                    fill="#ffffff"
+                    stroke="#e2e5ea"
+                    stroke-width="1"
+                  />
+                  <text
+                    x="190"
+                    y="38"
+                    text-anchor="middle"
+                    dominant-baseline="central"
+                    font-size="14.5"
+                    font-weight="800"
+                    fill="#5a6270"
+                  >
+                    UI 차트 이상
+                  </text>
+                  <text
+                    x="190"
+                    y="59"
+                    text-anchor="middle"
+                    dominant-baseline="central"
+                    font-size="12"
+                    font-weight="400"
+                    fill="#8b93a0"
+                  >
+                    육안 확인
+                  </text>
+
+                  <rect
+                    x="380"
+                    y="20"
+                    width="260"
+                    height="54"
+                    rx="8"
+                    fill="#ffffff"
+                    stroke="#e2e5ea"
+                    stroke-width="1"
+                  />
+                  <rect x="380" y="20" width="3.5" height="54" fill="#3a7bd5" />
+                  <text
+                    x="510"
+                    y="38"
+                    text-anchor="middle"
+                    dominant-baseline="central"
+                    font-size="14.5"
+                    font-weight="800"
+                    fill="#14171c"
+                  >
+                    Slack 자동 알람
+                  </text>
+                  <text
+                    x="510"
+                    y="59"
+                    text-anchor="middle"
+                    dominant-baseline="central"
+                    font-size="12"
+                    font-weight="400"
+                    fill="#5a6270"
+                  >
+                    메트릭 누락 감지 시
+                  </text>
+
+                  <path
+                    d="M190,74 L190,90 Q190,98 200,98 L315,98 Q325,98 325,106 L325,108"
+                    fill="none"
+                    stroke="#8b93a0"
+                    stroke-width="1.3"
+                    marker-end="url(#arrowM)"
+                  />
+                  <path
+                    d="M510,74 L510,90 Q510,98 500,98 L385,98 Q375,98 375,106 L375,108"
+                    fill="none"
+                    stroke="#8b93a0"
+                    stroke-width="1.3"
+                    marker-end="url(#arrowM)"
+                  />
+
+                  <rect
+                    x="250"
+                    y="110"
+                    width="200"
+                    height="54"
+                    rx="8"
+                    fill="#ffffff"
+                    stroke="#e2e5ea"
+                    stroke-width="1"
+                  />
+                  <text
+                    x="350"
+                    y="137"
+                    text-anchor="middle"
+                    dominant-baseline="central"
+                    font-size="14.5"
+                    font-weight="800"
+                    fill="#14171c"
+                  >
+                    메트릭 누락 확인
+                  </text>
+
+                  <path
+                    d="M350,164 L350,180 Q350,188 340,188 L200,188 Q190,188 190,196 L190,200"
+                    fill="none"
+                    stroke="#8b93a0"
+                    stroke-width="1.3"
+                    marker-end="url(#arrowM)"
+                  />
+                  <path
+                    d="M350,164 L350,180 Q350,188 360,188 L500,188 Q510,188 510,196 L510,200"
+                    fill="none"
+                    stroke="#8b93a0"
+                    stroke-width="1.3"
+                    marker-end="url(#arrowM)"
+                  />
+
+                  <rect
+                    x="60"
+                    y="200"
+                    width="260"
+                    height="54"
+                    rx="8"
+                    fill="#ffffff"
+                    stroke="#e2e5ea"
+                    stroke-width="1"
+                  />
+                  <text
+                    x="190"
+                    y="211"
+                    text-anchor="middle"
+                    dominant-baseline="central"
+                    font-size="14.5"
+                    font-weight="800"
+                    fill="#5a6270"
+                  >
+                    사용자 재조회
+                  </text>
+                  <text
+                    x="190"
+                    y="232"
+                    text-anchor="middle"
+                    dominant-baseline="central"
+                    font-size="12"
+                    font-weight="400"
+                    fill="#8b93a0"
+                  >
+                    구간 직접 선택
+                  </text>
+
+                  <rect
+                    x="380"
+                    y="200"
+                    width="260"
+                    height="54"
+                    rx="8"
+                    fill="#ffffff"
+                    stroke="#e2e5ea"
+                    stroke-width="1"
+                  />
+                  <rect
+                    x="380"
+                    y="200"
+                    width="3.5"
+                    height="54"
+                    fill="#3a7bd5"
+                  />
+                  <text
+                    x="510"
+                    y="211"
+                    text-anchor="middle"
+                    dominant-baseline="central"
+                    font-size="14.5"
+                    font-weight="800"
+                    fill="#14171c"
+                  >
+                    Agent 자동 백필
+                  </text>
+                  <text
+                    x="510"
+                    y="232"
+                    text-anchor="middle"
+                    dominant-baseline="central"
+                    font-size="12"
+                    font-weight="400"
+                    fill="#5a6270"
+                  >
+                    2주전~1주전 비교 후 재저장
+                  </text>
+
+                  <path
+                    d="M190,254 L190,270 Q190,278 200,278 L315,278 Q325,278 325,286 L325,288"
+                    fill="none"
+                    stroke="#8b93a0"
+                    stroke-width="1.3"
+                    marker-end="url(#arrowM)"
+                  />
+                  <path
+                    d="M510,254 L510,270 Q510,278 500,278 L385,278 Q375,278 375,286 L375,288"
+                    fill="none"
+                    stroke="#8b93a0"
+                    stroke-width="1.3"
+                    marker-end="url(#arrowM)"
+                  />
+
+                  <rect
+                    x="250"
+                    y="290"
+                    width="200"
+                    height="54"
+                    rx="8"
+                    fill="#ffffff"
+                    stroke="#e2e5ea"
+                    stroke-width="1"
+                  />
+                  <text
+                    x="350"
+                    y="317"
+                    text-anchor="middle"
+                    dominant-baseline="central"
+                    font-size="14.5"
+                    font-weight="800"
+                    fill="#14171c"
+                  >
+                    메트릭 갱신 완료
+                  </text>
+                </svg>
+                <p class="diagram-caption">
+                  왼쪽 파란 선이 있는 경로는 시스템이 자동으로 처리하고,
+                  오른쪽은 사람이 직접 개입합니다.<br />Agent는 2주전~1주전
+                  구간을 주기적으로 비교해 누락을 스스로 메꿉니다.
+                </p>
+              </div>
+              <div class="diagram">
+                <div class="field-label">
+                  데이터 수집 · 처리 구조<span class="dot">.</span>
+                </div>
+                <svg
+                  viewBox="0 0 700 430"
+                  width="100%"
+                  role="img"
+                  aria-labelledby="t_6606588129894932566 d_601793172131628321"
+                >
+                  <title id="t_6606588129894932566">
+                    uCMP 데이터 수집 및 처리 구조
+                  </title>
+                  <desc id="d_601793172131628321">
+                    Agent가 주기적으로 수집한 메트릭을 원본 테이블과 스냅샷
+                    테이블에 나눠 저장하고, 서버에서 집계해 API로 대시보드에
+                    전달
+                  </desc>
+                  <defs>
+                    <marker
+                      id="arrowM"
+                      viewBox="0 0 10 10"
+                      refX="8"
+                      refY="5"
+                      markerWidth="6"
+                      markerHeight="6"
+                      orient="auto-start-reverse"
+                    >
+                      <path
+                        d="M2 1L8 5L2 9"
+                        fill="none"
+                        stroke="#8b93a0"
+                        stroke-width="1.4"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </marker>
+                  </defs>
+
+                  <rect
+                    x="232"
+                    y="20"
+                    width="236"
+                    height="56"
+                    rx="8"
+                    fill="#ffffff"
+                    stroke="#e2e5ea"
+                    stroke-width="1"
+                  />
+                  <rect x="232" y="20" width="3.5" height="56" fill="#3a7bd5" />
+                  <text
+                    x="350"
+                    y="39"
+                    text-anchor="middle"
+                    dominant-baseline="central"
+                    font-size="14.5"
+                    font-weight="800"
+                    fill="#14171c"
+                  >
+                    Agent
+                  </text>
+                  <text
+                    x="350"
+                    y="60"
+                    text-anchor="middle"
+                    dominant-baseline="central"
+                    font-size="12"
+                    font-weight="400"
+                    fill="#5a6270"
+                  >
+                    OCI/GCP SDK로 주기적 조회
+                  </text>
+
+                  <path
+                    d="M350,76 L350,92 Q350,100 340,100 L200,100 Q190,100 190,108 L190,111"
+                    fill="none"
+                    stroke="#8b93a0"
+                    stroke-width="1.3"
+                    marker-end="url(#arrowM)"
+                  />
+                  <path
+                    d="M350,76 L350,92 Q350,100 360,100 L510,100 Q520,100 520,108 L520,111"
+                    fill="none"
+                    stroke="#8b93a0"
+                    stroke-width="1.3"
+                    marker-end="url(#arrowM)"
+                  />
+
+                  <rect
+                    x="100"
+                    y="112"
+                    width="180"
+                    height="50"
+                    fill="#ffffff"
+                    stroke="#e2e5ea"
+                    stroke-width="1"
+                  />
+                  <ellipse
+                    cx="190"
+                    cy="112"
+                    rx="90"
+                    ry="10"
+                    fill="#ffffff"
+                    stroke="#e2e5ea"
+                    stroke-width="1"
+                  />
+                  <text
+                    x="190"
+                    y="134"
+                    text-anchor="middle"
+                    dominant-baseline="central"
+                    font-size="12"
+                    font-weight="800"
+                    fill="#14171c"
+                  >
+                    원본 메트릭 테이블
+                  </text>
+                  <text
+                    x="190"
+                    y="150"
+                    text-anchor="middle"
+                    font-size="10.5"
+                    fill="#5a6270"
+                  >
+                    대부분의 데이터 저장
+                  </text>
+
+                  <rect
+                    x="420"
+                    y="112"
+                    width="180"
+                    height="50"
+                    fill="#ffffff"
+                    stroke="#3a7bd5"
+                    stroke-width="1.4"
+                  />
+                  <ellipse
+                    cx="510"
+                    cy="112"
+                    rx="90"
+                    ry="10"
+                    fill="#ffffff"
+                    stroke="#3a7bd5"
+                    stroke-width="1.4"
+                  />
+                  <text
+                    x="510"
+                    y="134"
+                    text-anchor="middle"
+                    dominant-baseline="central"
+                    font-size="12"
+                    font-weight="800"
+                    fill="#14171c"
+                  >
+                    스냅샷 테이블
+                  </text>
+                  <text
+                    x="510"
+                    y="150"
+                    text-anchor="middle"
+                    font-size="10.5"
+                    fill="#3a7bd5"
+                  >
+                    조회 빈번 · 실시간성 데이터
+                  </text>
+
+                  <path
+                    d="M190,162 L190,178 Q190,186 200,186 L290,186 Q300,186 300,194 L300,196"
+                    fill="none"
+                    stroke="#8b93a0"
+                    stroke-width="1.3"
+                    marker-end="url(#arrowM)"
+                  />
+                  <path
+                    d="M510,162 L510,178 Q510,186 500,186 L410,186 Q400,186 400,194 L400,196"
+                    fill="none"
+                    stroke="#8b93a0"
+                    stroke-width="1.3"
+                    marker-end="url(#arrowM)"
+                  />
+
+                  <rect
+                    x="250"
+                    y="196"
+                    width="200"
+                    height="56"
+                    rx="8"
+                    fill="#ffffff"
+                    stroke="#e2e5ea"
+                    stroke-width="1"
+                  />
+                  <rect
+                    x="250"
+                    y="196"
+                    width="3.5"
+                    height="56"
+                    fill="#3a7bd5"
+                  />
+                  <text
+                    x="350"
+                    y="215"
+                    text-anchor="middle"
+                    dominant-baseline="central"
+                    font-size="14.5"
+                    font-weight="800"
+                    fill="#14171c"
+                  >
+                    서버 집계 계산
+                  </text>
+                  <text
+                    x="350"
+                    y="236"
+                    text-anchor="middle"
+                    dominant-baseline="central"
+                    font-size="12"
+                    font-weight="400"
+                    fill="#5a6270"
+                  >
+                    리포트 · 대시보드용 값 계산
+                  </text>
+                  <line
+                    x1="350"
+                    y1="252"
+                    x2="350"
+                    y2="274"
+                    stroke="#8b93a0"
+                    stroke-width="1.3"
+                    marker-end="url(#arrowM)"
+                  />
+
+                  <rect
+                    x="280"
+                    y="276"
+                    width="140"
+                    height="48"
+                    rx="8"
+                    fill="#ffffff"
+                    stroke="#e2e5ea"
+                    stroke-width="1"
+                  />
+                  <text
+                    x="350"
+                    y="300"
+                    text-anchor="middle"
+                    dominant-baseline="central"
+                    font-size="14.5"
+                    font-weight="800"
+                    fill="#14171c"
+                  >
+                    API
+                  </text>
+                  <line
+                    x1="350"
+                    y1="324"
+                    x2="350"
+                    y2="346"
+                    stroke="#8b93a0"
+                    stroke-width="1.3"
+                    marker-end="url(#arrowM)"
+                  />
+
+                  <rect
+                    x="230"
+                    y="348"
+                    width="240"
+                    height="54"
+                    rx="8"
+                    fill="#ffffff"
+                    stroke="#e2e5ea"
+                    stroke-width="1"
+                  />
+                  <text
+                    x="350"
+                    y="366"
+                    text-anchor="middle"
+                    dominant-baseline="central"
+                    font-size="14.5"
+                    font-weight="800"
+                    fill="#5a6270"
+                  >
+                    Thymeleaf 대시보드
+                  </text>
+                  <text
+                    x="350"
+                    y="387"
+                    text-anchor="middle"
+                    dominant-baseline="central"
+                    font-size="12"
+                    font-weight="400"
+                    fill="#8b93a0"
+                  >
+                    표시만, 계산은 서버에서
+                  </text>
+                </svg>
+                <p class="diagram-caption">
+                  OCI 버전과 GCP 버전은 코드 구조부터 완전히 분리된 별도
+                  서비스입니다.<br />공통 코어 없이 각자 이 파이프라인을
+                  독립적으로 운영합니다.
+                </p>
+              </div>
               <div class="field-label">
                 What did I do<span class="dot">.</span>
               </div>
@@ -897,7 +3299,6 @@
                 ><span>Thymeleaf</span>
               </div>
             </article>
-
             <article class="project">
               <h3 class="project-title">
                 DAR · 멀티 클라우드 파일 보안 점검<span class="dot">.</span>
@@ -915,6 +3316,215 @@
                 OCI, GCP, Azure, OneDrive 4개 플랫폼을 대상으로 Master-Agent
                 분산 구조로 파일 보안 위배를 자동 탐지, 마스킹했습니다.
               </p>
+              <div class="diagram">
+                <div class="field-label">
+                  작업 할당 방식<span class="dot">.</span>
+                </div>
+                <svg
+                  viewBox="0 0 700 310"
+                  width="100%"
+                  role="img"
+                  aria-labelledby="t_7540716080597894750 d_4117934136634142460"
+                >
+                  <title id="t_7540716080597894750">DAR 작업 할당 방식</title>
+                  <desc id="d_4117934136634142460">
+                    Master가 일감 테이블에서 Agent의 처리 상태를 확인해 일감을
+                    등록하고, Agent가 병렬로 확장 가능한 구조
+                  </desc>
+                  <defs>
+                    <marker
+                      id="arrowM"
+                      viewBox="0 0 10 10"
+                      refX="8"
+                      refY="5"
+                      markerWidth="6"
+                      markerHeight="6"
+                      orient="auto-start-reverse"
+                    >
+                      <path
+                        d="M2 1L8 5L2 9"
+                        fill="none"
+                        stroke="#8b93a0"
+                        stroke-width="1.4"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </marker>
+                  </defs>
+
+                  <rect
+                    x="275"
+                    y="20"
+                    width="150"
+                    height="50"
+                    rx="8"
+                    fill="#ffffff"
+                    stroke="#e2e5ea"
+                    stroke-width="1"
+                  />
+                  <rect x="275" y="20" width="3.5" height="50" fill="#3a7bd5" />
+                  <text
+                    x="350"
+                    y="45"
+                    text-anchor="middle"
+                    dominant-baseline="central"
+                    font-size="14.5"
+                    font-weight="800"
+                    fill="#14171c"
+                  >
+                    Master
+                  </text>
+                  <line
+                    x1="350"
+                    y1="70"
+                    x2="350"
+                    y2="90"
+                    stroke="#8b93a0"
+                    stroke-width="1.3"
+                    marker-end="url(#arrowM)"
+                  />
+
+                  <rect
+                    x="280"
+                    y="92"
+                    width="140"
+                    height="50"
+                    fill="#ffffff"
+                    stroke="#e2e5ea"
+                    stroke-width="1"
+                  />
+                  <ellipse
+                    cx="350"
+                    cy="92"
+                    rx="70"
+                    ry="10"
+                    fill="#ffffff"
+                    stroke="#e2e5ea"
+                    stroke-width="1"
+                  />
+                  <text
+                    x="350"
+                    y="115"
+                    text-anchor="middle"
+                    dominant-baseline="central"
+                    font-size="13"
+                    font-weight="800"
+                    fill="#14171c"
+                  >
+                    일감 테이블
+                  </text>
+                  <text
+                    x="350"
+                    y="132"
+                    text-anchor="middle"
+                    font-size="11"
+                    fill="#5a6270"
+                  >
+                    처리 중 아니면 새로 등록
+                  </text>
+
+                  <path
+                    d="M350,146 L130,200"
+                    fill="none"
+                    stroke="#8b93a0"
+                    stroke-width="1.3"
+                    marker-end="url(#arrowM)"
+                  />
+                  <path
+                    d="M350,146 L350,200"
+                    fill="none"
+                    stroke="#8b93a0"
+                    stroke-width="1.3"
+                    marker-end="url(#arrowM)"
+                  />
+                  <path
+                    d="M350,146 L570,200"
+                    fill="none"
+                    stroke="#8b93a0"
+                    stroke-width="1.3"
+                    marker-end="url(#arrowM)"
+                  />
+
+                  <rect
+                    x="40"
+                    y="204"
+                    width="180"
+                    height="54"
+                    rx="8"
+                    fill="#ffffff"
+                    stroke="#e2e5ea"
+                    stroke-width="1"
+                  />
+                  <text
+                    x="130"
+                    y="231"
+                    text-anchor="middle"
+                    dominant-baseline="central"
+                    font-size="14.5"
+                    font-weight="800"
+                    fill="#5a6270"
+                  >
+                    Agent
+                  </text>
+                  <rect
+                    x="260"
+                    y="204"
+                    width="180"
+                    height="54"
+                    rx="8"
+                    fill="#ffffff"
+                    stroke="#e2e5ea"
+                    stroke-width="1"
+                  />
+                  <text
+                    x="350"
+                    y="231"
+                    text-anchor="middle"
+                    dominant-baseline="central"
+                    font-size="14.5"
+                    font-weight="800"
+                    fill="#5a6270"
+                  >
+                    Agent
+                  </text>
+                  <rect
+                    x="480"
+                    y="204"
+                    width="180"
+                    height="54"
+                    rx="8"
+                    fill="#ffffff"
+                    stroke="#e2e5ea"
+                    stroke-width="1"
+                  />
+                  <text
+                    x="570"
+                    y="231"
+                    text-anchor="middle"
+                    dominant-baseline="central"
+                    font-size="14.5"
+                    font-weight="800"
+                    fill="#5a6270"
+                  >
+                    Agent
+                  </text>
+
+                  <text
+                    x="350"
+                    y="285"
+                    text-anchor="middle"
+                    font-size="12"
+                    fill="#5a6270"
+                  >
+                    Agent 수만큼 병렬 처리 · 필요 시 자유롭게 확장
+                  </text>
+                </svg>
+                <p class="diagram-caption">
+                  Master는 일감 테이블에서 Agent가 처리 중인지 확인하고, 처리
+                  중이 아니면 새 일감을 등록합니다.<br />Agent는 필요한 만큼
+                  자유롭게 늘려 하루 3,000건을 병렬로 처리합니다.
+                </p>
+              </div>
               <div class="field-label">
                 What did I do<span class="dot">.</span>
               </div>
@@ -935,7 +3545,6 @@
                 ><span>Azure</span><span>JWT</span>
               </div>
             </article>
-
             <article class="project">
               <h3 class="project-title">
                 AI QA ChatBot · Milvus RAG 기반 사내 문서 응답<span class="dot"
@@ -950,6 +3559,250 @@
                 Milvus 임베딩 + GPT, Gemini 선택형 답변 생성, OpenAI 폴백,
                 대화이력 개인화 (이후 외부 이관)
               </p>
+              <div class="diagram">
+                <div class="field-label">
+                  모드 선택 분기<span class="dot">.</span>
+                </div>
+                <svg
+                  viewBox="0 0 700 260"
+                  width="100%"
+                  role="img"
+                  aria-labelledby="t_1343371453088685640 d_6661255743011371946"
+                >
+                  <title id="t_1343371453088685640">
+                    AI QA ChatBot 모드 선택 분기
+                  </title>
+                  <desc id="d_6661255743011371946">
+                    사용자가 내부 문서 검색과 외부 AI 직접 호출 중 하나를
+                    선택하는 흐름
+                  </desc>
+                  <defs>
+                    <marker
+                      id="arrowM"
+                      viewBox="0 0 10 10"
+                      refX="8"
+                      refY="5"
+                      markerWidth="6"
+                      markerHeight="6"
+                      orient="auto-start-reverse"
+                    >
+                      <path
+                        d="M2 1L8 5L2 9"
+                        fill="none"
+                        stroke="#8b93a0"
+                        stroke-width="1.4"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </marker>
+                  </defs>
+
+                  <rect
+                    x="225"
+                    y="20"
+                    width="250"
+                    height="50"
+                    rx="8"
+                    fill="#ffffff"
+                    stroke="#e2e5ea"
+                    stroke-width="1"
+                  />
+                  <text
+                    x="350"
+                    y="45"
+                    text-anchor="middle"
+                    dominant-baseline="central"
+                    font-size="14.5"
+                    font-weight="800"
+                    fill="#14171c"
+                  >
+                    사용자가 모드 선택
+                  </text>
+
+                  <path
+                    d="M350,70 L350,86 Q350,94 340,94 L200,94 Q190,94 190,102 L190,108"
+                    fill="none"
+                    stroke="#8b93a0"
+                    stroke-width="1.3"
+                    marker-end="url(#arrowM)"
+                  />
+                  <path
+                    d="M350,70 L350,86 Q350,94 360,94 L510,94 Q520,94 520,102 L520,108"
+                    fill="none"
+                    stroke="#8b93a0"
+                    stroke-width="1.3"
+                    marker-end="url(#arrowM)"
+                  />
+
+                  <rect
+                    x="40"
+                    y="110"
+                    width="300"
+                    height="56"
+                    rx="8"
+                    fill="#ffffff"
+                    stroke="#e2e5ea"
+                    stroke-width="1"
+                  />
+                  <rect x="40" y="110" width="3.5" height="56" fill="#3a7bd5" />
+                  <text
+                    x="190"
+                    y="122"
+                    text-anchor="middle"
+                    dominant-baseline="central"
+                    font-size="14.5"
+                    font-weight="800"
+                    fill="#14171c"
+                  >
+                    내부 문서 검색
+                  </text>
+                  <text
+                    x="190"
+                    y="143"
+                    text-anchor="middle"
+                    dominant-baseline="central"
+                    font-size="12"
+                    font-weight="400"
+                    fill="#5a6270"
+                  >
+                    Milvus 벡터 검색 사용
+                  </text>
+
+                  <rect
+                    x="370"
+                    y="110"
+                    width="300"
+                    height="56"
+                    rx="8"
+                    fill="#ffffff"
+                    stroke="#e2e5ea"
+                    stroke-width="1"
+                  />
+                  <rect
+                    x="370"
+                    y="110"
+                    width="3.5"
+                    height="56"
+                    fill="#3a7bd5"
+                  />
+                  <text
+                    x="520"
+                    y="122"
+                    text-anchor="middle"
+                    dominant-baseline="central"
+                    font-size="14.5"
+                    font-weight="800"
+                    fill="#14171c"
+                  >
+                    외부 AI 직접 호출
+                  </text>
+                  <text
+                    x="520"
+                    y="143"
+                    text-anchor="middle"
+                    dominant-baseline="central"
+                    font-size="12"
+                    font-weight="400"
+                    fill="#5a6270"
+                  >
+                    Milvus 미사용
+                  </text>
+
+                  <line
+                    x1="190"
+                    y1="166"
+                    x2="190"
+                    y2="188"
+                    stroke="#8b93a0"
+                    stroke-width="1.3"
+                    marker-end="url(#arrowM)"
+                  />
+                  <line
+                    x1="520"
+                    y1="166"
+                    x2="520"
+                    y2="188"
+                    stroke="#8b93a0"
+                    stroke-width="1.3"
+                    marker-end="url(#arrowM)"
+                  />
+
+                  <rect
+                    x="40"
+                    y="190"
+                    width="300"
+                    height="56"
+                    rx="8"
+                    fill="#ffffff"
+                    stroke="#c9cdd4"
+                    stroke-width="1"
+                    stroke-dasharray="4 3"
+                  />
+                  <text
+                    x="190"
+                    y="202"
+                    text-anchor="middle"
+                    dominant-baseline="central"
+                    font-size="14.5"
+                    font-weight="800"
+                    fill="#5a6270"
+                  >
+                    답변 생성
+                  </text>
+                  <text
+                    x="190"
+                    y="223"
+                    text-anchor="middle"
+                    dominant-baseline="central"
+                    font-size="12"
+                    font-weight="400"
+                    fill="#8b93a0"
+                  >
+                    검색 결과 없으면 답변 불가
+                  </text>
+
+                  <rect
+                    x="370"
+                    y="190"
+                    width="300"
+                    height="56"
+                    rx="8"
+                    fill="#ffffff"
+                    stroke="#e2e5ea"
+                    stroke-width="1"
+                  />
+                  <text
+                    x="520"
+                    y="202"
+                    text-anchor="middle"
+                    dominant-baseline="central"
+                    font-size="14.5"
+                    font-weight="800"
+                    fill="#14171c"
+                  >
+                    답변 생성
+                  </text>
+                  <text
+                    x="520"
+                    y="223"
+                    text-anchor="middle"
+                    dominant-baseline="central"
+                    font-size="12"
+                    font-weight="400"
+                    fill="#5a6270"
+                  >
+                    외부 AI 응답 그대로 활용
+                  </text>
+                </svg>
+                <p class="diagram-caption">
+                  학습 범위 밖 질문을 자동으로 감지해 넘기는 방식이 아니라,
+                  사용자가 처음부터<br />'내부 문서 검색'과 '외부 AI 직접 호출'
+                  중 하나를 선택합니다.<br />두 경로 모두 GPT·Gemini 중 답변
+                  생성 모델을 고를 수 있고, 기본값은 GPT입니다.<br />대화이력
+                  기반 개인화는 개발 도중 프로젝트가 종료되며 외부 업체로
+                  이관됐습니다.
+                </p>
+              </div>
               <div class="field-label">
                 Tech Stack<span class="dot">.</span>
               </div>
@@ -959,7 +3812,6 @@
                 ><span>GPT</span><span>Gemini</span>
               </div>
             </article>
-
             <article class="project">
               <h3 class="project-title">
                 LRS · 경기도교육청 학습자 데이터 이관<span class="dot">.</span>
@@ -980,7 +3832,6 @@
                 ><span>MongoDB</span>
               </div>
             </article>
-
             <article class="project">
               <h3 class="project-title">
                 Windows Migration · 온프레미스 자동화 도구<span class="dot"
@@ -1004,7 +3855,6 @@
                 ><span>Syncthing</span>
               </div>
             </article>
-
             <article class="project">
               <h3 class="project-title">
                 실시간 방송 · RTMP 기반 방송 송출<span class="dot">.</span>
@@ -1029,11 +3879,9 @@
         </div>
       </div>
     </section>
-
     <section id="outsourced">
       <div class="wrap">
-        <h2 class="section-title">외주 프로젝트<span class="dot">.</span></h2>
-
+        <h2 class="section-title">Freelance<span class="dot">.</span></h2>
         <div class="company-group">
           <div class="company-side">
             <div class="company-name">
@@ -1060,7 +3908,6 @@
             </article>
           </div>
         </div>
-
         <div class="company-group">
           <div class="company-side">
             <div class="company-name">
@@ -1091,7 +3938,6 @@
         </div>
       </div>
     </section>
-
     <section id="education">
       <div class="wrap">
         <h2 class="section-title">Education<span class="dot">.</span></h2>
@@ -1109,24 +3955,36 @@
             <span class="when">· 2017.03 – 2023.02 (4.26/4.5)</span>
           </li>
         </ul>
-
         <h2 class="section-title" style="margin-top: 44px">
           Certifications<span class="dot">.</span>
         </h2>
-        <p class="cert-line">
-          네트워크관리사 2급(2023.07) · 컴퓨터활용능력 2급(2023.06) ·
-          정보처리기능사(2016.06) · MOS-Master(2016.01)
-        </p>
+        <ul class="edu-list">
+          <li>
+            <b>네트워크관리사 2급</b>
+            <span class="when">· 2023.07 / 한국정보통신협회</span>
+          </li>
+          <li>
+            <b>컴퓨터활용능력 2급</b>
+            <span class="when">· 2023.06 / 대한상공회의소</span>
+          </li>
+          <li>
+            <b>정보처리기능사</b>
+            <span class="when">· 2016.06 / 한국산업인력공단</span>
+          </li>
+          <li>
+            <b>MOS-Master</b>
+            <span class="when">· 2016.01 / Microsoft</span>
+          </li>
+        </ul>
       </div>
     </section>
-
     <footer id="contact">
       <div class="wrap">
         <div class="footer-name">
           정태수<span style="color: var(--accent)">.</span>
         </div>
-        <div class="cert-line">
-          백엔드 개발 4년 1개월 · AI Lab, (주)터틀날리지
+        <div class="cert-line" id="tenure-footer">
+          백엔드 개발 4년 1개월 · AI Lab, (주)유앤아워스
         </div>
         <div class="footer-links">
           <a href="mailto:taesu08@gmail.com">taesu08@gmail.com</a>
@@ -1135,5 +3993,29 @@
         <div class="footer-note">정태수 · Backend Engineer</div>
       </div>
     </footer>
+
+    <script>
+      (function () {
+        // 입사일(2022-07) 기준 근속 기간을 자동 계산해 "N년 M개월"로 표시
+        var START = new Date(2022, 6, 1); // 2022.07
+        var now = new Date();
+        var months =
+          (now.getFullYear() - START.getFullYear()) * 12 +
+          (now.getMonth() - START.getMonth());
+        if (now.getDate() < START.getDate()) months -= 1;
+        if (months < 0) months = 0;
+        var years = Math.floor(months / 12);
+        var remMonths = months % 12;
+        var tenure = years + '년 ' + remMonths + '개월';
+
+        var hero = document.getElementById('tenure-hero');
+        if (hero) hero.textContent = '백엔드 개발 ' + tenure;
+
+        var footer = document.getElementById('tenure-footer');
+        if (footer)
+          footer.textContent =
+            '백엔드 개발 ' + tenure + ' · AI Lab, (주)유앤아워스';
+      })();
+    </script>
   </body>
 </html>
