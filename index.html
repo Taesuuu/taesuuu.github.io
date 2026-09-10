@@ -1315,7 +1315,7 @@
               <text x="530" y="329" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="400" fill="#8b93a0">상용 배포는 별도 일정</text>
               
               </svg>
-              <p class="diagram-caption">상용은 Spring Boot 2.x로 그대로 운영하면서, 내부 테스트 환경에서 3.x로 한 번에 전환해 검증을 마쳤습니다.<br>javax → jakarta 전환으로 달라지는 지원 메서드는 코드 주석으로 정리했고, Java 8 기반 코드가<br>Java 21에서 동작하지 않게 된 부분도 많아 하나하나 확인하는 데 시간이 걸렸습니다. 상용 반영은 별도 일정으로 진행합니다.</p>
+              <p class="diagram-caption">상용은 Spring Boot 2.x로 그대로 운영하면서, 내부 테스트 환경에서 3.x로 미리 전환해 검증을 마쳤습니다.<br>Java 8 기반 코드가 Java 21에서 동작하지 않게 된 부분이 많아 하나하나 확인하는 데 시간이 걸렸지만,<br>Spring Boot 2.x 지원 종료 같은 상황이 와도 상용에 바로 반영할 수 있는 상태를 미리 갖춰뒀습니다.</p>
             </div>
               <div class="field-label">
                 What did I do<span class="dot">.</span>
@@ -1340,15 +1340,16 @@
                 <li>
                   <span
                     >금융권 고객사 AI 연동 니즈에 맞춰 <b>SSE 중계 기능</b> 신규
-                    개발 (스트리밍 응답 중계, 예외 처리 포함)</span
+                    개발 (스트리밍 응답 중계, 예외 처리 포함) —
+                    <b>현재 고객사에서 사용 중</b></span
                   >
                 </li>
                 <li>
                   <span
-                    >javax → jakarta 전환 등 지원 메서드가 바뀌는 부분을
-                    코드 주석으로 정리, Java 8 기반 코드가 Java 21에서
-                    동작하지 않게 된 부분도 많아 확인에 시간이 걸렸지만
-                    <b>검증 완료</b></span
+                    >Java 8 기반 코드가 Java 21에서 동작하지 않게 된 부분이
+                    많아 하나하나 확인해 코드 주석으로 정리, Spring Boot
+                    2.x 지원 종료 같은 상황이 와도
+                    <b>상용에 바로 반영할 수 있는 상태로 미리 대비</b></span
                   >
                 </li>
               </ul>
@@ -1480,7 +1481,11 @@
               <ul class="bullets">
                 <li>
                   <span
-                    >OCI API 데이터 결측 방어 로직을 구축해 핵심 자산 데이터의
+                    >실시간 대시보드에 데이터가 누락되어 보이고 월간·일간
+                    리포트 정확도가 떨어지는 문제를 발견 — CPU·메모리
+                    지표는 결측이 잘 티가 안 나지만 금액(비용) 데이터는
+                    바로 티가 나서 주로 여기서 확인됨. OCI API 데이터
+                    결측 방어 로직을 구축해 핵심 자산 데이터의
                     <b>일관성·무결성 확보</b></span
                   >
                 </li>
