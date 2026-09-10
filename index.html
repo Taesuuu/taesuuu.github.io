@@ -741,8 +741,13 @@
           </p>
           <div class="field-label">Description<span class="dot">.</span></div>
           <p class="body-text">
-            사내 문서를 Milvus 벡터 DB에 임베딩으로 저장, GPT·Gemini 중 선택
-            가능한 답변 생성 챗봇을 설계부터 구현까지 담당했습니다.
+            회사가 오라클 총판사로, 오라클 엔지니어들이 문의에 답하기 위해
+            매번 내부 문서를 하나하나 찾아 확인해야 하는 비효율이
+            있었습니다. 이를 챗봇으로 만들어 엔지니어가 우선 활용하고,
+            이후 고객사에도 열어 직접 답을 찾을 수 있도록 하는 게 처음
+            취지였습니다. 사내 문서를 Milvus 벡터 DB에 임베딩으로 저장,
+            GPT·Gemini 중 선택 가능한 답변 생성 챗봇을 설계부터 구현까지
+            담당했습니다.
           </p>
           <div class="field-label">What did I do<span class="dot">.</span></div>
           <ul class="bullets">
@@ -906,10 +911,12 @@
                 Description<span class="dot">.</span>
               </div>
               <p class="body-text">
-                기존 Gateway UI에서 Proxy까지 통합 관리하고 싶다는 1개
-                고객사의 요구사항을, 3개월 데드라인 안에 충족하는 서비스로
-                개발해 제공했습니다 (Envoy 오픈소스 코어 활용, Nginx Plus
-                등과 비교 후 선정).
+                Gateway에 상품을 추가로 확장하려는 방향과 맞물려, 운영자
+                입장에서도 Proxy를 별도 서버로 띄우고 접속 포트를 따로 열어
+                관리해야 하는 번거로움이 있어, 기존 Gateway UI에서 Proxy까지
+                통합 관리하고 싶다는 1개 고객사의 요구사항을, 3개월
+                데드라인 안에 충족하는 서비스로 개발해 제공했습니다 (Envoy
+                오픈소스 코어 활용, Nginx Plus 등과 비교 후 선정).
               </p>
             <div class="diagram">
               <div class="field-label">배포 파이프라인<span class="dot">.</span></div>
@@ -1308,7 +1315,7 @@
               <text x="530" y="329" text-anchor="middle" dominant-baseline="central" font-size="14" font-weight="400" fill="#8b93a0">상용 배포는 별도 일정</text>
               
               </svg>
-              <p class="diagram-caption">상용은 Spring Boot 2.x로 그대로 운영하면서, 내부 테스트 환경에서 3.x로 한 번에 전환해 검증했습니다.<br>패키지 변경(javax → jakarta)뿐 아니라, Gateway 기능이 의존하던 외부 라이브러리가 삭제되거나<br>동작하지 않게 된 부분까지 함께 확인해야 했습니다. 상용 반영은 검증 후 별도 일정으로 진행합니다.</p>
+              <p class="diagram-caption">상용은 Spring Boot 2.x로 그대로 운영하면서, 내부 테스트 환경에서 3.x로 한 번에 전환해 검증을 마쳤습니다.<br>javax → jakarta 전환으로 달라지는 지원 메서드는 코드 주석으로 정리했고, Java 8 기반 코드가<br>Java 21에서 동작하지 않게 된 부분도 많아 하나하나 확인하는 데 시간이 걸렸습니다. 상용 반영은 별도 일정으로 진행합니다.</p>
             </div>
               <div class="field-label">
                 What did I do<span class="dot">.</span>
@@ -1334,6 +1341,14 @@
                   <span
                     >금융권 고객사 AI 연동 니즈에 맞춰 <b>SSE 중계 기능</b> 신규
                     개발 (스트리밍 응답 중계, 예외 처리 포함)</span
+                  >
+                </li>
+                <li>
+                  <span
+                    >javax → jakarta 전환 등 지원 메서드가 바뀌는 부분을
+                    코드 주석으로 정리, Java 8 기반 코드가 Java 21에서
+                    동작하지 않게 된 부분도 많아 확인에 시간이 걸렸지만
+                    <b>검증 완료</b></span
                   >
                 </li>
               </ul>
@@ -1560,9 +1575,14 @@
                 Description<span class="dot">.</span>
               </div>
               <p class="body-text">
-                사내 문서를 Milvus 벡터 DB에 임베딩으로 저장하고 GPT·Gemini
-                중 선택 가능한 답변 생성 챗봇을 설계부터 구현까지 담당해
-                제공했습니다 (OpenAI 폴백, 대화이력 개인화 포함 — 개인화는
+                회사가 오라클 총판사로, 오라클 엔지니어들이 문의에 답하기
+                위해 매번 내부 문서를 하나하나 찾아 확인해야 하는 비효율이
+                있었습니다. 이를 챗봇으로 만들어 엔지니어가 우선 활용하고,
+                이후 고객사에도 열어 직접 답을 찾을 수 있도록 하는 게 처음
+                취지였습니다. 사내 문서를 Milvus 벡터 DB에 임베딩으로
+                저장하고 GPT·Gemini 중 선택 가능한 답변 생성 챗봇을
+                설계부터 구현까지 담당해 제공했습니다 (OpenAI 폴백,
+                대화이력 개인화 포함 — 개인화는
                 프로젝트 종료로 이후 외부 이관).
               </p>
             <div class="diagram">
@@ -1833,11 +1853,6 @@
       })();
 
       (function () {
-        // 스크롤 위치에 따라 상단 nav에서 현재 보고 있는 섹션을 강조 표시.
-        // "고정 nav 바로 아래 기준선을 가장 최근에 지나온 섹션"을 활성으로
-        // 판정하는 표준적인 방식 — 섹션이 짧아 뷰포트 하단과 겹치는
-        // 경우에도(예: 문서 끝에서 두 섹션이 동시에 보일 때) 자연스럽게
-        // 올바른 섹션을 고른다.
         var navLinks = Array.prototype.slice.call(
           document.querySelectorAll(".nav-links a")
         );
@@ -1861,7 +1876,7 @@
           current = link;
         }
 
-        var THRESHOLD = 90; // 고정 nav(약 60px) 아래 여유를 둔 기준선
+        var THRESHOLD = 90;
 
         var ticking = false;
         function updateActive() {
